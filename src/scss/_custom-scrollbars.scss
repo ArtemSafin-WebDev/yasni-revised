@@ -1,0 +1,21 @@
+.iScrollIndicator {
+    background-color: $secondary-blue !important;
+    border-radius: 0 !important;
+}
+
+
+.ps__rail-y {
+    opacity: 1 !important;
+    width: 15px !important;
+    background: transparent !important;
+    z-index: 100;
+    
+}
+
+
+.ps__thumb-y {
+    background: $secondary-blue !important;
+    border-radius: 0 !important;
+    width: 11px !important;
+    
+}

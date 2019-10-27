@@ -17,7 +17,47 @@
     }
 }
 
-
+.burger-btn {
+    width: 6rem;
+    height: 6rem;
+    margin-right: 3rem;
+    flex-shrink: 0;
+    display: none;
+    @include breakpoint(mobile) {
+        display: block;
+    }
+    @include breakpoint(small-mobile) {
+        width: 4rem;
+        height: 4rem;
+    }
+    > span {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        > span {
+            width: 6rem;
+            height: 0.6rem;
+            margin-bottom: 1.4rem;
+            border-radius: 5px;
+            background-color: $secondary-blue;
+            @include breakpoint(small-mobile) {
+                width: 4rem;
+                margin-bottom: 1rem;
+                height: 0.4rem;
+            }
+            &:nth-child(3) {
+                width: 4rem;
+                margin-bottom: 0;
+                @include breakpoint(small-mobile) {
+                    width: 2.6rem;
+                }
+            }
+        }
+    }
+}
 
 .logo {
     width: 26rem;
@@ -31,26 +71,64 @@
 .main-nav {
     margin-left: auto;
     margin-right: 11rem;
+    .burger-shown & {
+        @include breakpoint(mobile) {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(100%);
+            transition: transform 0.3s, visibility 0.3s;
+        }
+    }
     @include breakpoint(mobile) {
         position: fixed;
-        left: 0;
-        top: $mobile-header-height;
+        right: 100%;
+        top: 0;
         background-color: #fff;
         margin: 0;
-        right: 0;
+        width: 100%;
         bottom: 0;
         z-index: 500;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         display: flex;
         flex-direction: column;
-
-
-
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0s linear 0.3s, transform 0.3s, visibility 0s linear 0.3s;
+        padding: 0 $mobile-content-padding;
     }
 }
 
+.main-nav__heading-block {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    height: 11.5rem;
+    @include breakpoint(mobile) {
+        display: flex;
+    }
+}
+
+.main-nav__heading-block-logo {
+    width: 28rem;
+    margin-left: -1.6rem;
+}
+
+.main-nav__heading-block-close-btn {
+    display: block;
+    > span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        > svg {
+            fill: $border-color;
+            display: block;
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+}
 
 .main-nav__list {
     display: flex;
@@ -59,35 +137,45 @@
     @include breakpoint(mobile) {
         flex-direction: column;
         flex-wrap: nowrap;
-        margin: auto 0;
+        align-items: stretch;
+        margin-top: 4rem;
+        counter-reset: ordered-list;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 1rem;
     }
 }
-
 
 .main-nav__list-item {
     margin-right: 5rem;
     @include breakpoint(mobile) {
         margin-right: 0;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
+        counter-increment: ordered-list;
     }
     &--main {
         display: none;
     }
     &:last-child {
         margin-right: 0;
-        
     }
 }
-
 
 .main-nav__link {
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: .01rem;
-    transition: color .2s;
+    letter-spacing: 0.01rem;
+    transition: color 0.2s;
     white-space: nowrap;
     @include breakpoint(mobile) {
-        font-size: 5rem;
+        font-size: 2.6rem;
+        letter-spacing: .025rem;
+        text-align: left;
+        @include linkColor {
+            color: $black-text;
+        }
+        &::before {
+            content: '0' counter(ordered-list) '_ ';
+        }
     }
     .main-nav__list-item.active & {
         color: $primary-red;
@@ -99,7 +187,6 @@
     }
 }
 
-
 .language {
     display: flex;
     align-items: center;
@@ -107,7 +194,6 @@
         margin-left: auto;
     }
 }
-
 
 .language__link {
     width: 7rem;
@@ -119,7 +205,7 @@
     background-color: white;
     text-transform: uppercase;
     font-size: 1.8rem;
-    letter-spacing: .01rem;
+    letter-spacing: 0.01rem;
     font-weight: 600;
     @include linkColor {
         color: $secondary-blue;
@@ -131,16 +217,100 @@
         font-size: 3.6rem;
     }
 
+    @include breakpoint(small-mobile) {
+        width: auto;
+        height: auto;
+        padding: 1.4rem 1.6rem;
+        font-size: 2.5rem;
+    }
+
     &:not(.active) {
         @include hover-active {
             text-decoration: underline;
         }
     }
-   
+
     &.active {
         background-color: $secondary-blue;
         @include linkColor {
             color: white;
+        }
+    }
+}
+
+
+
+.main-nav__send-application {
+    font-size: 3.6rem;
+    letter-spacing: 0.025rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid $primary-red;
+    border-radius: 5rem;
+    padding: 2rem 4rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 4.5rem;
+    display: none;
+    transition: color .2s, background-color .2s;
+    @include linkColor {
+        color: $black-text;
+    }
+    @include hover-active {
+        background-color: $primary-red;
+        color: white;
+    }
+    @include breakpoint(mobile) {
+        display: block;
+    }
+}
+
+
+
+.main-nav__social-list {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+    margin-top: auto;
+    &-item {
+        margin-right: 4rem;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    
+    @include breakpoint(mobile) {
+        display: flex;
+    }
+}
+
+
+.main-nav__social-link {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: color .2s;
+    @include linkColor {
+        color: $border-color;
+    }
+    @include hover-active {
+        color: $secondary-blue;
+    }
+    > svg {
+        fill: currentColor;
+        width: 100%;
+        height: 100%;
+        &.icon-facebook {
+            width: 80%;
+            height: 80%;
+        }
+        &.icon-instagram {
+            width: 80%;
+            height: 80%;
         }
     }
 }

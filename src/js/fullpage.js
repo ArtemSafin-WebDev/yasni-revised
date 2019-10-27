@@ -1,6 +1,8 @@
 import Fullpage from 'fullpage.js';
 import selects from './customSelects';
 import introLinks from './introLinks';
+import introSlider from './introSlider';
+import formValidation from './formValidation';
 
 
 export default function() {
@@ -36,6 +38,14 @@ export default function() {
             // Intro links
 
             introLinks();
+
+            // Intro slider
+
+            introSlider();
+
+            // Form validation
+
+            formValidation();
         },
         afterLoad: isHomeSlide,
         onLeave: isHomeSlide

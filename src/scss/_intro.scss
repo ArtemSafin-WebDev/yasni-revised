@@ -99,6 +99,7 @@
     @include breakpoint(mobile) {
         font-size: 8.4rem;
         margin-top: 2rem;
+        line-height: 1;
     }
 }
 
@@ -133,8 +134,8 @@
         margin-top: 2rem;
         @include fullwidthBG {
             background-color: white;
-            border-top: 2px solid $border-color;
-            border-bottom: 2px solid $border-color;
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
         }
     }
 
@@ -173,7 +174,9 @@
     min-height: 15rem;
     @include breakpoint(mobile) {
         display: flex;
-
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
     }
 }
 
@@ -269,6 +272,52 @@
     &.active > img {
         &:nth-child(2) {
             opacity: 1;
+        }
+    }
+}
+
+
+
+.intro__maps-block-slider-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30rem;
+    display: flex;
+    margin-right: -$mobile-content-padding;
+    display: none;
+    z-index: 100;
+    @include breakpoint(mobile) {
+        display: flex;
+    }
+}
+
+
+.mobile-slider-nav__btn {
+    display: block;
+    color: white;
+    transition: color .2s, background-color .2s;
+    background-color: $secondary-blue;
+    @include hover-active {
+        background-color: #5e87b0;
+    }
+    &.swiper-button-disabled {
+        cursor: default;
+        pointer-events: none;
+        background-color: #5e87b0;
+    }
+    & > span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: inherit;
+        width: 15rem;
+        height: 15rem;
+        > svg {
+            fill: currentColor;
+            width: 5rem;
+            height: 5rem;
         }
     }
 }

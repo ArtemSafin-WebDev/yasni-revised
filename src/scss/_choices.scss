@@ -13,7 +13,8 @@
     font-size: 2.4rem;
     min-height: auto;
     // border-bottom: 2px solid #dbe1ed;
-    padding: .5rem 0;
+    padding: .6rem 0;
+    border-bottom: 2px solid #dbe1ed !important;
 }
 
 .choices[data-type*=select-one] .choices__inner {
@@ -45,7 +46,7 @@
     border-radius: 0;
    
     border: 2px solid #dbe1ed !important;
-    margin-top: 0;
+    margin-top: -2px;
     word-break: initial;
     
 }

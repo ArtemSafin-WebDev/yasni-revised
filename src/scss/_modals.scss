@@ -50,11 +50,17 @@
 
 .contact-form__form {
     margin-top: 4rem;
+    
     form {
         & > div {
             margin-bottom: 3.5rem;
-            border-bottom: 2px solid #dbe1ed;
-            padding-bottom: 0.6rem;
+        }
+
+
+        .parsley-errors-list {
+            display: block;
+            color: $primary-red;
+            margin-top: .6rem;
         }
 
         label {
@@ -68,8 +74,9 @@
             color: $secondary-blue;
             font-size: 2.4rem;
             letter-spacing: .01rem;
-            padding: .5rem 0;
-            
+            padding: .6rem 0;
+           
+            border-bottom: 2px solid #dbe1ed;
             @include placeholder {
                 color: black;
             }
@@ -86,7 +93,7 @@
             text-transform: uppercase;
             background-color: $primary-red;
             padding: 2rem;
-            box-shadow: 0px 10px 20px 0px rgba(244, 3, 82, 0.35);  
+            box-shadow: 0px 1rem 2rem 0px rgba(244, 3, 82, 0.35);  
             & > span {
                 position: relative;
                 display: flex;
@@ -102,5 +109,25 @@
                 }
             }
         }
+    }
+}
+
+
+
+
+.contact-form__policy {
+    font-size: 1.6rem;
+    color: $black-text;
+    margin-top: 2rem;
+}
+
+
+
+.mobile-form {
+    display: none;
+    color: $secondary-blue;
+    margin-top: 5rem;
+    @include breakpoint(mobile) {
+        display: block;
     }
 }

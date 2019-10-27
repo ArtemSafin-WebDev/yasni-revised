@@ -9,6 +9,9 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    @include breakpoint(small-mobile) {
+        font-size: 40%;
+    }
 }
 
 body {

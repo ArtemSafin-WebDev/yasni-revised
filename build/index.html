@@ -14,8 +14,16 @@
         <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
             <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
             ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <symbol viewBox="0 0 48 24" id="arrow-left" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M47 13H3.4l9.3 9.3a1 1 0 010 1.4 1 1 0 01-1.4 0l-11-11a1 1 0 010-1.4l11-11a1 1 0 011.4 0 1 1 0 010 1.4L3.4 11H47a1 1 0 010 2z" fill-rule="evenodd" />
+                </symbol>
                 <symbol viewBox="0 0 48 24" id="arrow-right" xmlns="http://www.w3.org/2000/svg">
                     <path d="M47.7 12.7l-11 11a1 1 0 01-1.4 0 1 1 0 010-1.4l9.3-9.3H1a1 1 0 010-2h43.6l-9.3-9.3a1 1 0 010-1.4 1 1 0 011.4 0l11 11a1 1 0 010 1.4z" fill-rule="evenodd" />
+                </symbol>
+                <symbol viewBox="0 0 47.971 47.971" id="close" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M28.228 23.986L47.092 5.122a2.998 2.998 0 000-4.242 2.998 2.998 0 00-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 00-4.242 0 2.998 2.998 0 000 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 104.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 000-4.242L28.228 23.986z"
+                    />
                 </symbol>
                 <symbol viewBox="0 0 430.113 430.114" id="facebook" xmlns="http://www.w3.org/2000/svg">
                     <path d="M158.081 83.3v59.218h-43.385v72.412h43.385v215.183h89.122V214.936h59.805s5.601-34.721 8.316-72.685H247.54V92.74c0-7.4 9.717-17.354 19.321-17.354h48.557V.001h-66.021C155.878-.004 158.081 72.48 158.081 83.3z" />
@@ -48,8 +56,25 @@
         <div class="page-content">
             <header class="page-header">
                 <div class="container container--flex container--align-items-center container--flex-grow">
+                    <button class="burger-btn js-menu-open">
+                        <span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
                     <img src="img/logo/logo.svg" alt="Логотип" class="logo" />
-                    <nav class="main-nav">
+                    <nav class="main-nav js-main-nav">
+                        <div class="main-nav__heading-block">
+                            <img src="img/logo/logo.svg" alt="Логотип" class="main-nav__heading-block-logo" />
+                            <button class="main-nav__heading-block-close-btn js-menu-close">
+                                <span>
+                                    <svg width="25" height="25" aria-hidden="true" class="icon-close">
+                                        <use xlink:href="#close" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
                         <ul class="main-nav__list" id="fullpage-menu">
                             <li class="main-nav__list-item main-nav__list-item--main" data-menuanchor="intro">
                                 <a href="#intro" class="main-nav__link">Главная</a>
@@ -74,6 +99,32 @@
                             </li>
                             <li class="main-nav__list-item">
                                 <a href="#" class="main-nav__link">Контакты</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="main-nav__send-application">
+                            Оформить заявку
+                        </a>
+                        <ul class="main-nav__social-list">
+                            <li class="main-nav__social-list-item">
+                                <a href="#" class="main-nav__social-link">
+                                    <svg width="25" height="25" aria-hidden="true" class="icon-vk">
+                                        <use xlink:href="#vk" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="main-nav__social-list-item">
+                                <a href="#" class="main-nav__social-link">
+                                    <svg width="25" height="25" aria-hidden="true" class="icon-facebook">
+                                        <use xlink:href="#facebook" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="main-nav__social-list-item">
+                                <a href="#" class="main-nav__social-link">
+                                    <svg width="25" height="25" aria-hidden="true" class="icon-instagram">
+                                        <use xlink:href="#instagram" />
+                                    </svg>
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -125,7 +176,7 @@
                                     <div class="intro__nav-block">
                                         <ul class="intro__nav-block-list">
                                             <li class="intro__nav-block-list-item">
-                                                <a href="#" class="intro__nav-block-link active" data-image="land">Аренда</a>
+                                                <a href="#" class="intro__nav-block-link" data-image="land">Аренда</a>
                                                 <svg width="25" height="25" aria-hidden="true" class="icon-intro-link-triangle">
                                                     <use xlink:href="#intro-link-triangle" />
                                                 </svg>
@@ -150,7 +201,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="intro__maps-block">
+                                    <div class="intro__maps-block js-intro-slider">
                                         <div class="swiper-container">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
@@ -174,7 +225,7 @@
                                                     <div class="intro__maps-block-card">
                                                         <div class="intro__maps-block-card-info">
                                                             <div class="intro__maps-block-card-info-large-text">
-                                                                Город
+                                                                Земля
                                                             </div>
                                                             <div class="intro__maps-block-card-info-small-text">
                                                                 инфраструктура
@@ -225,10 +276,67 @@
                                         </div>
                                         <div class="intro__maps-block-slider-nav">
                                             <button class="mobile-slider-nav__btn mobile-slider-nav__btn--prev">
-                                                <span> </span>
+                                                <span>
+                                                    <svg width="25" height="25" aria-hidden="true" class="icon-arrow-left">
+                                                        <use xlink:href="#arrow-left" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                            <button class="mobile-slider-nav__btn mobile-slider-nav__btn--next">
+                                                <span>
+                                                    <svg width="25" height="25" aria-hidden="true" class="icon-arrow-right">
+                                                        <use xlink:href="#arrow-right" />
+                                                    </svg>
+                                                </span>
                                             </button>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="mobile-form">
+                                    <h3 class="contact-form__heading">
+                                        Стать инвестором
+                                    </h3>
+                                    <p class="contact-form__action">
+                                        Заполните заявку
+                                    </p>
+                                    <div class="contact-form__form">
+                                        <form action="/" method="POST" data-parsley-validate>
+                                            <div>
+                                                <label for="name_1">Имя</label>
+                                                <input type="text" name="name" id="name_1" placeholder="ФИО" required />
+                                            </div>
+                                            <div>
+                                                <label for="tel_1">Телефон</label>
+                                                <input type="tel" name="tel" id="tel_1" class="js-phone-input" placeholder="+7 911 666 33 33" required data-parsley-phone />
+                                            </div>
+                                            <div>
+                                                <label for="type_1">Тип производства</label>
+                                                <select name="select" id="type_1" class="js-custom-select" data-parsley-production data-parsley-errors-container="#type_1_error">
+                                                    <option placeholder>Тип производства</option>
+                                                    <option value="value1">Значение 1</option>
+                                                    <option value="value2">Значение 2</option>
+                                                    <option value="value3">Значение 3</option>
+                                                </select>
+                                                <div id="type_1_error"></div>
+                                            </div>
+                                            <div>
+                                                <label for="email_1">Телефон</label>
+                                                <input type="email" name="email" id="email_1" placeholder="E-mail" required />
+                                            </div>
+                                            <button type="submit">
+                                                <span>
+                                                    Далее
+                                                    <svg width="36" height="20" aria-hidden="true" class="icon-arrow-right">
+                                                        <use xlink:href="#arrow-right" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <p class="contact-form__policy">
+                                        Нажимая на кнопку «Отправить» Вы даете согласие на обработку своих персональных данных в соответствии со статьей 9 Федерального закона от 27 июля 2006 г. N 152-ФЗ «О персональных данных»
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -253,7 +361,7 @@
 
             <div class="page-modals">
                 <div class="contact-form">
-                    <div class="contact-form__content">
+                    <div class="contact-form__content js-form-scrollbar">
                         <h3 class="contact-form__heading">
                             Стать инвестором
                         </h3>
@@ -261,27 +369,28 @@
                             Заполните заявку
                         </p>
                         <div class="contact-form__form">
-                            <form action="/" method="POST">
+                            <form action="/" method="POST" data-parsley-validate>
                                 <div>
-                                    <label for="name">Имя</label>
-                                    <input type="text" name="name" id="name" placeholder="ФИО" required />
+                                    <label for="name_1">Имя</label>
+                                    <input type="text" name="name" id="name_1" placeholder="ФИО" required />
                                 </div>
                                 <div>
-                                    <label for="tel">Телефон</label>
-                                    <input type="tel" name="tel" id="tel" placeholder="+7 911 666 33 33" required />
+                                    <label for="tel_1">Телефон</label>
+                                    <input type="tel" name="tel" id="tel_1" class="js-phone-input" placeholder="+7 911 666 33 33" required data-parsley-phone />
                                 </div>
                                 <div>
-                                    <label for="tel">Тип производства</label>
-                                    <select name="select" id="type" class="js-custom-select">
+                                    <label for="type_1">Тип производства</label>
+                                    <select name="select" id="type_1" class="js-custom-select" data-parsley-production data-parsley-errors-container="#type_1_error">
                                         <option placeholder>Тип производства</option>
                                         <option value="value1">Значение 1</option>
                                         <option value="value2">Значение 2</option>
                                         <option value="value3">Значение 3</option>
                                     </select>
+                                    <div id="type_1_error"></div>
                                 </div>
                                 <div>
-                                    <label for="email">Телефон</label>
-                                    <input type="email" name="email" id="email" placeholder="E-mail" required />
+                                    <label for="email_1">Телефон</label>
+                                    <input type="email" name="email" id="email_1" placeholder="E-mail" required />
                                 </div>
                                 <button type="submit">
                                     <span>
@@ -293,6 +402,9 @@
                                 </button>
                             </form>
                         </div>
+                        <p class="contact-form__policy">
+                            Нажимая на кнопку «Отправить» Вы даете согласие на обработку своих персональных данных в соответствии со статьей 9 Федерального закона от 27 июля 2006 г. N 152-ФЗ «О персональных данных»
+                        </p>
                     </div>
                 </div>
             </div>

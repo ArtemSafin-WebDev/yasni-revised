@@ -20,8 +20,25 @@
         <div class="page-content">
             <header class="page-header">
                 <div class="container container--flex container--align-items-center container--flex-grow">
+                    <button class="burger-btn js-menu-open">
+                        <span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
                     <img src="img/logo/logo.svg" alt="Логотип" class="logo" />
-                    <nav class="main-nav">
+                    <nav class="main-nav js-main-nav">
+                        <div class="main-nav__heading-block">
+                            <img src="img/logo/logo.svg" alt="Логотип" class="main-nav__heading-block-logo">
+                            <button class="main-nav__heading-block-close-btn js-menu-close">
+                                <span>
+                                    <svg width="25" height="25" aria-hidden="true" class="icon-close">
+                                        <use xlink:href="#close" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
                         <ul class="main-nav__list" id="fullpage-menu">
                             <li class="main-nav__list-item main-nav__list-item--main" data-menuanchor="intro">
                                 <a href="#intro" class="main-nav__link">Главная</a>
@@ -46,6 +63,32 @@
                             </li>
                             <li class="main-nav__list-item">
                                 <a href="#" class="main-nav__link">Контакты</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="main-nav__send-application">
+                            Оформить заявку
+                        </a>
+                        <ul class="main-nav__social-list">
+                            <li class="main-nav__social-list-item">
+                                <a href="#" class="main-nav__social-link">
+                                    <svg width="25" height="25" aria-hidden="true" class="icon-vk">
+                                        <use xlink:href="#vk" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="main-nav__social-list-item">
+                                <a href="#" class="main-nav__social-link">
+                                    <svg width="25" height="25" aria-hidden="true" class="icon-facebook">
+                                        <use xlink:href="#facebook" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="main-nav__social-list-item">
+                                <a href="#" class="main-nav__social-link">
+                                    <svg width="25" height="25" aria-hidden="true" class="icon-instagram">
+                                        <use xlink:href="#instagram" />
+                                    </svg>
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -89,7 +132,7 @@
 
             <div class="page-modals">
                 <div class="contact-form">
-                    <div class="contact-form__content">
+                    <div class="contact-form__content js-form-scrollbar">
                         <h3 class="contact-form__heading">
                             Стать инвестором
                         </h3>
@@ -97,27 +140,30 @@
                             Заполните заявку
                         </p>
                         <div class="contact-form__form">
-                            <form action="/" method="POST">
+                            <form action="/" method="POST" data-parsley-validate>
                                 <div>
-                                    <label for="name">Имя</label>
-                                    <input type="text" name="name" id="name" placeholder="ФИО" required />
+                                    <label for="name_1">Имя</label>
+                                    <input type="text" name="name" id="name_1" placeholder="ФИО" required />
                                 </div>
                                 <div>
-                                    <label for="tel">Телефон</label>
-                                    <input type="tel" name="tel" id="tel" placeholder="+7 911 666 33 33" required />
+                                    <label for="tel_1">Телефон</label>
+                                    <input type="tel" name="tel" id="tel_1" class="js-phone-input" placeholder="+7 911 666 33 33" required data-parsley-phone />
                                 </div>
                                 <div>
-                                    <label for="tel">Тип производства</label>
-                                    <select name="select" id="type" class="js-custom-select">
+                                    <label for="type_1">Тип производства</label>
+                                    <select name="select" id="type_1" class="js-custom-select" data-parsley-production data-parsley-errors-container="#type_1_error">
                                         <option placeholder>Тип производства</option>
                                         <option value="value1">Значение 1</option>
                                         <option value="value2">Значение 2</option>
                                         <option value="value3">Значение 3</option>
                                     </select>
+                                    <div id="type_1_error">
+
+                                    </div>
                                 </div>
                                 <div>
-                                    <label for="email">Телефон</label>
-                                    <input type="email" name="email" id="email" placeholder="E-mail" required />
+                                    <label for="email_1">Телефон</label>
+                                    <input type="email" name="email" id="email_1" placeholder="E-mail" required />
                                 </div>
                                 <button type="submit">
                                     <span>
@@ -129,6 +175,11 @@
                                 </button>
                             </form>
                         </div>
+                        <p class="contact-form__policy">
+                            Нажимая на кнопку «Отправить» Вы даете согласие на обработку своих персональных данных в соответствии 
+                            со статьей 9 Федерального закона от 27 июля 2006 г. 
+                            N 152-ФЗ «О персональных данных»
+                        </p>
                     </div>
                 </div>
             </div>
