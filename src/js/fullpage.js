@@ -3,6 +3,7 @@ import selects from './customSelects';
 import introLinks from './introLinks';
 import introSlider from './introSlider';
 import formValidation from './formValidation';
+import paymentsSlider from './paymentsSlider';
 
 
 export default function() {
@@ -21,7 +22,7 @@ export default function() {
         paddingTop: '10rem',
         menu: '#fullpage-menu',
         responsiveWidth: 768.5,
-        // scrollOverflow: true,
+        scrollOverflow: true,
         afterRender: function() {
             // Move pagination to another location
 
@@ -46,6 +47,10 @@ export default function() {
             // Form validation
 
             formValidation();
+
+            // Payments slider
+
+            paymentsSlider();
         },
         afterLoad: isHomeSlide,
         onLeave: isHomeSlide

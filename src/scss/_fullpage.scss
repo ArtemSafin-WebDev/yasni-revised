@@ -62,7 +62,14 @@
     display: none;
 }
 
-
+.fp-auto-height-responsive {
+    @include breakpoint(mobile) {
+        padding-top: 0 !important;
+        &:first-child {
+            padding-top: 11rem !important;
+        }
+    }
+}
 
 .fullpage-section-inner {
     padding-right: $sidebar-width;
@@ -71,11 +78,14 @@
     flex-grow: 1;
     @include breakpoint(mobile) {
         padding-right: 0;
+        padding-left: 0;
     }
     &:not(.fullpage-section-inner--intro) {
         padding-left: $form-width + 3rem;
+        padding-right: $sidebar-width + 1.5rem;
         @include breakpoint(mobile) {
             padding-left: 0;
+            padding-right: 0;
         }
     }
 }

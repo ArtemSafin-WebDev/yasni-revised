@@ -1,0 +1,39 @@
+.mobile-slider-nav__btn {
+    display: block;
+    color: white;
+    transition: color .2s, background-color .2s;
+    background-color: $secondary-blue;
+    @include hover-active {
+        background-color: #5e87b0;
+    }
+    &.swiper-button-disabled {
+        cursor: default;
+        pointer-events: none;
+        background-color: #5e87b0;
+    }
+    & > span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: inherit;
+        width: 15rem;
+        height: 15rem;
+        > svg {
+            fill: currentColor;
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+}
+
+
+
+.decorative {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 10rem);
+    background-color: red;
+}

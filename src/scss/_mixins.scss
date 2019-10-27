@@ -72,6 +72,19 @@
     }
 }
 
+
+@mixin sectionHeader() {
+    color: $black-text;
+    font-size: 6rem;
+    font-family: $bebas;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    @include breakpoint(mobile) {
+        font-size: 7.2rem;
+    }
+}
+
 @mixin fullwidthBG {
     &::before {
         content: '';

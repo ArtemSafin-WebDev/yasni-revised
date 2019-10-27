@@ -1,0 +1,274 @@
+.payments {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include fullwidthBG {
+        background-color: white;
+    }
+    @include breakpoint(mobile) {
+        @include fullwidthBG {
+            background-color: #f1f4f9;
+        }
+    }
+}
+
+.payments__heading {
+    @include sectionHeader();
+    text-align: center;
+    margin-top: 8rem;
+    @include breakpoint(mobile) {
+        text-align: left;
+        margin-top: 6rem;
+    }
+}
+
+.payments__slider {
+    padding-bottom: 5rem;
+    margin-top: 5rem;
+    @include breakpoint(mobile) {
+        padding-bottom: 0;
+        margin-top: 2.5rem;
+    }
+    .swiper-container {
+        @include breakpointMF(small-tablet) {
+            margin: 0;
+            position: static;
+            overflow: initial;
+            display: block;
+        }
+    }
+    .swiper-wrapper {
+        @include breakpointMF(small-tablet) {
+            box-sizing: border-box;
+            position: static;
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1.5rem;
+        }
+    }
+
+    .swiper-slide {
+        @include breakpointMF(small-tablet) {
+            position: static;
+            padding: 0 1.5rem;
+            width: 25%;
+        }
+    }
+}
+
+
+.payments__slider-panel {
+    display: none;
+    margin: 0 -20px;
+    @include breakpoint(mobile) {
+        display: flex;
+    }
+    @include breakpoint(small-mobile) {
+        margin: 0 -10px;
+    }
+}
+
+.payments__slider-panel-pagination-column,
+.payments__slider-panel-navigation-column {
+    width: 50%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(small-mobile) {
+        padding: 0 10px;
+    }
+}
+
+.payments__slider-panel-pagination {
+    
+    width: calc(100% + 20px);
+    @include breakpoint(small-mobile) {
+        width: calc(100% + 10px);
+    }
+   
+}
+
+
+.payments__slider-panel-navigation {
+    display: flex;
+    width: calc(100% + 2.5rem);
+    
+}
+
+
+.payments__slider-btn {
+    width: 50%;
+    color: white;
+    background-color: $secondary-blue;
+    transition: color .2s, background-color .2s;
+    @include hover-active {
+        background-color: #5e87b0;
+    }
+    &.swiper-button-disabled {
+        cursor: default;
+        pointer-events: none;
+        background-color: #5e87b0;
+    }
+    > span {
+        display: block;
+        position: relative;
+        padding-bottom: 100%;
+        > svg {
+            fill: currentColor;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+}
+
+
+.payments__card {
+    padding-top: 3rem;
+    @include breakpoint(mobile) {
+        padding-bottom: 5rem;
+    }
+}
+
+
+.payments__card-heading {
+    font-family: $bebas;
+    font-size: 3rem;
+    letter-spacing: .01rem;
+    color: $secondary-blue;
+    text-transform: uppercase;
+    margin-top: 3rem;
+    font-weight: 400;
+    @include breakpoint(mobile) {
+        font-size: 4rem;
+        
+    }
+}
+
+
+.payments__card-text {
+    font-size: 2.4rem;
+    color: black;
+    margin-top: 1rem;
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+    }
+}
+
+.payments__card-image-container {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    background-color: $secondary-blue;
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: rgba($secondary-blue, 0.7);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+}
+
+.payments__card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+    z-index: 1;
+}
+
+.payments__card-amount-before {
+    color: $border-color;
+    font-size: 2.4rem;
+    border: 1px solid $border-color;
+    background-color: #fff;
+    padding: 1.3rem 3.5rem;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    right: -1.5rem;
+    z-index: 3;
+    font-weight: 700;
+    user-select: none;
+    @include breakpoint(mobile) {
+        right: 0;
+        padding: .8rem 1rem;
+    }
+    .number {
+        text-decoration: line-through;
+    }
+}
+
+.payments__card-amount-after {
+    color: white;
+    font-size: 7.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    user-select: none;
+    @include breakpoint(mobile) {
+        font-size: 9rem;
+    }
+    @include breakpoint(small-mobile) {
+        font-size: 6rem;
+    }
+}
+
+
+.payments__decorative {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    > div {
+        margin: 0 -1.5rem;
+        display: flex;
+        height: 100%;
+        @include breakpoint(mobile) {
+            margin: 0 -20px;
+        }
+        @include breakpoint(small-mobile) {
+            margin: 0 -10px;
+        }
+        > div {
+            width: 25%;
+            height: 100%;
+            padding: 0 1.5rem;
+            @include breakpoint(mobile) {
+                width: 50%;
+                padding: 0 20px;
+                &:nth-child(3),
+                &:nth-child(4) {
+                    display: none;
+                }
+            }
+            @include breakpoint(small-mobile) {
+                padding: 0 10px;
+            }
+            > div {
+                border-left: 1px solid $border-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

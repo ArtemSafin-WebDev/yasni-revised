@@ -1,6 +1,11 @@
 .iScrollIndicator {
-    background-color: $secondary-blue !important;
+    background-color: rgba($secondary-blue, .8) !important;
     border-radius: 0 !important;
+}
+
+
+.iScrollVerticalScrollbar.iScrollLoneScrollbar {
+    right: $sidebar-width + .2rem !important;
 }
 
 

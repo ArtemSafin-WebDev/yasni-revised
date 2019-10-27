@@ -127,6 +127,18 @@
     display: none;
     color: $secondary-blue;
     margin-top: 5rem;
+    padding-bottom: 8rem;
+    position: relative;
+    &::after {
+        content: '';
+        left: calc((100vw - 100%) / 2 * -1);
+        bottom: 0;
+        height: 1px;
+        width: 100vw;
+        position: absolute;
+        background-color: $border-color; 
+        z-index: 200;
+    }
     @include breakpoint(mobile) {
         display: block;
     }
