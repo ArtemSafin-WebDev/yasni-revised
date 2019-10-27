@@ -2245,10 +2245,22 @@ img {
       padding: 0 10px; } }
 
 .payments__slider-panel-pagination {
-  width: calc(100% + 20px); }
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% + 40px);
+  font-size: 3rem;
+  text-transform: uppercase;
+  border-top: 1px solid #bacbdb;
+  border-bottom: 1px solid #bacbdb; }
+  .payments__slider-panel-pagination .swiper-pagination-total {
+    margin-left: 0.5rem; }
+  .payments__slider-panel-pagination .swiper-pagination-current {
+    margin-right: .5rem; }
   @media only screen and (max-width: 36em) {
     .payments__slider-panel-pagination {
-      width: calc(100% + 10px); } }
+      width: calc(100% + 20px); } }
 
 .payments__slider-panel-navigation {
   display: flex;

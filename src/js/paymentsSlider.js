@@ -15,6 +15,12 @@ export default function() {
                 nextEl: slider.querySelector('.payments__slider-btn--next'),
                 prevEl: slider.querySelector('.payments__slider-btn--prev')
             },
+            pagination: {
+                el: slider.querySelector('.js-payments-slider-pagination'),
+                type: 'fraction',
+                formatFractionCurrent: number => (number.toString().length === 1 && number !== 0) ? '0' + number : number,
+                formatFractionTotal: number => (number.toString().length === 1 && number !== 0) ? '0' + number : number
+            },
             spaceBetween: 20,
             breakpoints: {
                 768: {

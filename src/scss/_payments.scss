@@ -77,16 +77,31 @@
     padding: 0 20px;
     display: flex;
     flex-direction: column;
+    
     @include breakpoint(small-mobile) {
         padding: 0 10px;
     }
 }
 
 .payments__slider-panel-pagination {
+    flex-grow: 1;
+    display: flex;
     
-    width: calc(100% + 20px);
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 40px);
+    font-size: 3rem;
+    text-transform: uppercase;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    .swiper-pagination-total {
+        margin-left: 0.5rem;
+    }
+    .swiper-pagination-current {
+        margin-right: .5rem;
+    }
     @include breakpoint(small-mobile) {
-        width: calc(100% + 10px);
+        width: calc(100% + 20px);
     }
    
 }
