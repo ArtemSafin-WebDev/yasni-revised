@@ -1,0 +1,21 @@
+.container {
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 0 $mobile-content-padding;
+    }
+}
+
+
+.container--flex {
+    display: flex;
+}
+
+
+.container--align-items-center {
+    align-items: center;
+}
+
+
+.container--flex-grow {
+    flex-grow: 1;
+}

@@ -1,0 +1,274 @@
+.intro {
+    
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    @include fullwidthBG {
+        background-color: #f1f4f9;
+    }
+}
+
+
+.intro__heading-block {
+    padding-left: $side-padding;
+    align-self: flex-start;
+    margin-top: 5rem;
+    @include breakpoint(mobile) {
+        margin-top: 0;
+        padding-left: 0;
+    }
+}
+
+
+.intro__nav-block {
+    flex-grow: 1;
+    background-color: #fff;
+    width: 53rem;
+    margin-top: 4rem;
+    border-top: 2px solid $border-color;
+    border-bottom: 2px solid $border-color;
+    border-right: 2px solid $border-color;
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+
+.intro__nav-block-list {
+    padding-left: $side-padding;
+}
+
+.intro__nav-block-list-item {
+    position: relative;
+    > svg {
+        height: calc(100% + 2px);
+        width: auto;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        margin-top: -2px;
+        margin-left: -5.9rem;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s, visibility 0s linear .2s;
+    }
+}
+
+.intro__nav-block-link {
+    font-size: 2.4rem;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+    display: block;
+    border-bottom: 2px solid $border-color;
+    padding: 4rem 0;
+    padding-right: 6rem;
+    font-weight: 700;
+    transition: color .2s;
+    @include linkColor {
+        color: $secondary-blue;
+    }
+
+    &.active {
+        color: $primary-red;
+        & + svg {
+            opacity: 1;
+            visibility: visible;
+            transition: all .2s;
+        }
+    }
+}
+
+
+.intro__heading-block,
+.intro__nav-block {
+    position: relative;
+    z-index: 5;
+}
+
+.intro__main-heading {
+    font-family: $montserrat;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 7.2rem;
+    letter-spacing: .01rem;
+    color: white;
+    text-shadow: 0px 6px 12px rgba(155, 177, 201, 0.25);  
+    @include breakpoint(mobile) {
+        font-size: 8.4rem;
+        margin-top: 2rem;
+    }
+}
+
+
+.intro__slogan {
+    color: #9bb1c9;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 4.8rem;
+    margin-top: 2rem;
+    @include breakpoint(mobile) {
+        font-size: 6rem;
+        margin-top: 0;
+    }
+}
+
+
+
+.intro__maps-block {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+    @include breakpoint(mobile) {
+        position: relative;
+        width: auto;
+        height: auto;
+        overflow: initial;
+        margin-top: 2rem;
+        @include fullwidthBG {
+            background-color: white;
+            border-top: 2px solid $border-color;
+            border-bottom: 2px solid $border-color;
+        }
+    }
+
+    .swiper-container {
+        @include breakpointMF(small-tablet) {
+            margin: 0;
+            position: static;
+            overflow: initial;
+            display: block;
+        }
+    }
+    .swiper-wrapper {
+        @include breakpointMF(small-tablet) {
+            box-sizing: border-box;
+            position: static;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .swiper-slide {
+        @include breakpointMF(small-tablet) {
+            position: static;
+        }
+    }
+}
+
+
+
+.intro__maps-block-card-info {
+    padding-right: 30rem;
+    
+    align-items: center;
+    display: none;
+    min-height: 15rem;
+    @include breakpoint(mobile) {
+        display: flex;
+
+    }
+}
+
+
+
+.intro__maps-block-card-info-large-text {
+    color: $secondary-blue;
+    font-size: 4.4rem;
+    letter-spacing: .05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.intro__maps-block-card-info-small-text {
+    color: #a1a1a1;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-left: 1.5rem;
+}
+
+.intro__maps-block-card-image-link {
+    width: 80rem;
+    height: 70rem;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include breakpoint(mobile) {
+        position: static;
+        width: 100% !important;
+        height: auto !important;
+        padding-bottom: 100%;
+        left: 0 !important;
+        top: 0 !important;
+        position: relative;
+        
+    }
+    &--city {
+        left: 45rem;
+        top: 32rem;
+        z-index: 40;
+        width: 90rem;
+    }
+    &--land {
+        left: 58rem;
+        top: -8rem;
+        z-index: 20;
+    }
+    &--factory {
+        left: 114rem;
+        top: 4rem;
+        z-index: 30;
+    }
+
+    &--construction {
+        left: 100rem;
+        top: 54rem;
+        z-index: 45;
+    }
+    & > img {
+        @include objectFitContain();
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: opacity .2s;
+        
+        pointer-events: none;
+        &:nth-child(2),
+        &:nth-child(3) {
+            opacity: 0;
+        }
+
+
+        @include breakpoint(mobile) {
+            &:nth-child(3) {
+                opacity: 1;
+            }
+        }
+        
+    }
+
+    @include hover-active {
+        & > img {
+            &:nth-child(2) {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.active > img {
+        &:nth-child(2) {
+            opacity: 1;
+        }
+    }
+}

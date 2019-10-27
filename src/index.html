@@ -1,0 +1,144 @@
+{% set title = "Главная страница" %} {% extends "layout.html" %} {% block content %}
+
+<div id="fullpage">
+    <div class="section fp-auto-height-responsive" data-anchor="intro">
+        <div class="fullpage-section-inner fullpage-section-inner--intro">
+            <div class="intro">
+                <div class="intro__heading-block">
+                    <h1 class="intro__main-heading">Тосэр ясный</h1>
+                    <p class="intro__slogan">
+                        Территория, где<br />
+                        начинается бизнес
+                    </p>
+                </div>
+                <div class="intro__nav-block">
+                    <ul class="intro__nav-block-list">
+                        <li class="intro__nav-block-list-item">
+                            <a href="#" class="intro__nav-block-link active" data-image="land">Аренда</a>
+                            <svg width="25" height="25" aria-hidden="true" class="icon-intro-link-triangle">
+                                <use xlink:href="#intro-link-triangle" />
+                            </svg>
+                        </li>
+                        <li class="intro__nav-block-list-item">
+                            <a href="#" class="intro__nav-block-link" data-image="city">Город</a>
+                            <svg width="25" height="25" aria-hidden="true" class="icon-intro-link-triangle">
+                                <use xlink:href="#intro-link-triangle" />
+                            </svg>
+                        </li>
+                        <li class="intro__nav-block-list-item">
+                            <a href="#" class="intro__nav-block-link" data-image="factory">Земля</a>
+                            <svg width="25" height="25" aria-hidden="true" class="icon-intro-link-triangle">
+                                <use xlink:href="#intro-link-triangle" />
+                            </svg>
+                        </li>
+                        <li class="intro__nav-block-list-item">
+                            <a href="#" class="intro__nav-block-link" data-image="construction">Строительство</a>
+                            <svg width="25" height="25" aria-hidden="true" class="icon-intro-link-triangle">
+                                <use xlink:href="#intro-link-triangle" />
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+                <div class="intro__maps-block">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="intro__maps-block-card">
+                                    <div class="intro__maps-block-card-info">
+                                        <div class="intro__maps-block-card-info-large-text">
+                                            Город
+                                        </div>
+                                        <div class="intro__maps-block-card-info-small-text">
+                                            инфраструктура
+                                        </div>
+                                    </div>
+                                    <a href="#" class="intro__maps-block-card-image-link intro__maps-block-card-image-link--city" data-link="city">
+                                        <img src="img/intro/city-gs.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                        <img src="img/intro/city-with-outline.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                        <img src="img/intro/city.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="intro__maps-block-card">
+                                    <div class="intro__maps-block-card-info">
+                                        <div class="intro__maps-block-card-info-large-text">
+                                            Город
+                                        </div>
+                                        <div class="intro__maps-block-card-info-small-text">
+                                            инфраструктура
+                                        </div>
+                                    </div>
+                                    <a href="#" class="intro__maps-block-card-image-link intro__maps-block-card-image-link--land" data-link="land">
+                                        <img src="img/intro/land-gs.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                        <img src="img/intro/land-with-outline.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                        <img src="img/intro/land.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="intro__maps-block-card">
+                                    <div class="intro__maps-block-card-info">
+                                        <div class="intro__maps-block-card-info-large-text">
+                                            Аренда
+                                        </div>
+                                        <div class="intro__maps-block-card-info-small-text">
+                                            строительство
+                                        </div>
+                                    </div>
+                                    <a href="#" class="intro__maps-block-card-image-link intro__maps-block-card-image-link--factory" data-link="factory">
+                                        <img src="img/intro/factory-gs.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                        <img src="img/intro/factory-with-outline.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                        <img src="img/intro/factory.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="intro__maps-block-card">
+                                    <div class="intro__maps-block-card-info">
+                                        <div class="intro__maps-block-card-info-large-text">
+                                            Аренда
+                                        </div>
+                                        <div class="intro__maps-block-card-info-small-text">
+                                            строительство
+                                        </div>
+                                    </div>
+                                    <a href="#" class="intro__maps-block-card-image-link intro__maps-block-card-image-link--construction" data-link="construction">
+                                        <img src="img/intro/construction-gs.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                        <img src="img/intro/construction-with-outline.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                        <img src="img/intro/construction.png" alt="" class="intro__maps-block-card-image-link-layer">
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="intro__maps-block-slider-nav">
+                        <button class="mobile-slider-nav__btn mobile-slider-nav__btn--prev">
+                            <span>
+
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section fp-auto-height-responsive" data-anchor="payments">
+        <div class="fullpage-section-inner">
+            Section 2
+        </div>
+    </div>
+    <div class="section fp-auto-height-responsive">
+        <div class="fullpage-section-inner">
+            Section 3
+        </div>
+    </div>
+    <div class="section fp-auto-height-responsive">
+        <div class="fullpage-section-inner">
+            Section 4
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+.page-sidebar {
+    position: fixed;
+    right: 0;
+    top: $header-height;
+    bottom: 0;
+    width: $sidebar-width;
+    background-color: #fff;
+    border-left: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 500;
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+
+.social__link {
+    
+    transition: color .2s;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 3rem;
+    @include linkColor {
+        color: $border-color;
+    }
+    @include hover-active {
+        color: $secondary-blue;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    > svg {
+        fill: currentColor;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+.fullpage-dots {
+    margin-top: auto;
+}
+
+
+.next-slide-btn {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    transition: color .2s;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility 0s linear .3s;
+    @include linkColor {
+        color: $secondary-blue;
+    }
+    @include hover-active {
+        color: $primary-red;
+    }
+    & > svg {
+        fill: currentColor;
+        width: 4.5rem;
+        height: 9rem;
+        display: block;
+    }
+
+    .on-intro-slide & {
+        opacity: 1;
+        visibility: visible;
+        transition: all .3s;
+    }
+}

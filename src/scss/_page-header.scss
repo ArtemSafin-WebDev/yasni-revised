@@ -1,0 +1,146 @@
+.page-header {
+    position: fixed;
+    height: $header-height;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    color: $secondary-blue;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    padding-left: $side-padding;
+    z-index: 500;
+    @include breakpoint(mobile) {
+        height: $mobile-header-height;
+        padding-left: 0;
+    }
+}
+
+
+
+.logo {
+    width: 26rem;
+    height: auto;
+    flex-shrink: 0;
+    @include breakpoint(mobile) {
+        width: 28rem;
+    }
+}
+
+.main-nav {
+    margin-left: auto;
+    margin-right: 11rem;
+    @include breakpoint(mobile) {
+        position: fixed;
+        left: 0;
+        top: $mobile-header-height;
+        background-color: #fff;
+        margin: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 500;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-direction: column;
+
+
+
+        display: none;
+    }
+}
+
+
+.main-nav__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: auto 0;
+    }
+}
+
+
+.main-nav__list-item {
+    margin-right: 5rem;
+    @include breakpoint(mobile) {
+        margin-right: 0;
+        margin-bottom: 4rem;
+    }
+    &--main {
+        display: none;
+    }
+    &:last-child {
+        margin-right: 0;
+        
+    }
+}
+
+
+.main-nav__link {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .01rem;
+    transition: color .2s;
+    white-space: nowrap;
+    @include breakpoint(mobile) {
+        font-size: 5rem;
+    }
+    .main-nav__list-item.active & {
+        color: $primary-red;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: $primary-red;
+    }
+}
+
+
+.language {
+    display: flex;
+    align-items: center;
+    @include breakpoint(mobile) {
+        margin-left: auto;
+    }
+}
+
+
+.language__link {
+    width: 7rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: .01rem;
+    font-weight: 600;
+    @include linkColor {
+        color: $secondary-blue;
+    }
+
+    @include breakpoint(mobile) {
+        width: 13rem;
+        height: 9rem;
+        font-size: 3.6rem;
+    }
+
+    &:not(.active) {
+        @include hover-active {
+            text-decoration: underline;
+        }
+    }
+   
+    &.active {
+        background-color: $secondary-blue;
+        @include linkColor {
+            color: white;
+        }
+    }
+}
