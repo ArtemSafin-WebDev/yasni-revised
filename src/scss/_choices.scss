@@ -24,10 +24,15 @@
 .choices[data-type*=select-one]::after {
     border-color: $secondary-blue transparent transparent !important;
     border-width: .6rem;
-    margin-top: 1px !important;
+    margin-top: -2px !important;
     right: 2rem;
+    transform-origin: center top;
+    transition: transform .2s;
 }
 
+.choices[data-type*=select-one].is-open::after {
+    transform: translateY(.5rem) rotate(180deg);
+}
 
 .choices__placeholder {
     opacity: 1;

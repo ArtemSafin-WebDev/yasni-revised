@@ -114,12 +114,21 @@
 .success__links-slider-thumbs {
     border-bottom: 1px solid $border-color;
     padding-bottom: 4rem;
+    @include breakpoint(mobile) {
+        padding-bottom: 0;
+    }
+    .swiper-container {
+        @include breakpoint(mobile) {
+            overflow: visible;
+        }
+    }
     .swiper-slide {
         width: 7rem;
         opacity: .5;
         transition: opacity .2s;
+        cursor: pointer;
     }
-    .swiper-slide-active {
+    .swiper-slide-thumb-active {
         opacity: 1;
     }
     @include breakpoint(mobile) {
@@ -143,21 +152,23 @@
 .success__links-slider-thumbs-width-wrapper {
     width: 60%;
     margin: 0 auto;
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin: 0;
+        padding: 2rem;
+        overflow: hidden;
+    }
 }
 
 
 .success__links-slider-thumbs-card-image-container {
-    // width: 4rem;
-    // height: 4rem;
+    
     overflow: hidden;
     position: relative;
     border-radius: 50%;
     width: 100%;
     padding-bottom: 100%;
-    @include breakpoint(mobile) {
-        width: 7rem;
-        height: 7rem;
-    }
+    
     > img {
         position: absolute;
         left: 0;
@@ -170,6 +181,14 @@
 
 .success__links-slider-main {
     position: relative;
+    .swiper-container {
+        margin: 0 -6rem;
+        padding: 0 6rem;
+        @include breakpoint(mobile) {
+            margin: 0;
+            padding: 0;
+        }
+    }
 }
 
 .success__links-slider-main-card {

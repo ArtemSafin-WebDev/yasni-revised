@@ -2,7 +2,6 @@ import Swiper from 'swiper';
 
 export default function() {
     let successSliders = Array.from(document.querySelectorAll('.js-success-slider'));
-    
 
     successSliders.forEach(block => {
         const main = block.querySelector('.js-success-slider-main');
@@ -17,23 +16,27 @@ export default function() {
                 nextEl: main.querySelector('.success__links-slider-main-arrows-btn--next')
             },
             thumbs: {}
-        }
-
+        };
 
         const thumbsSliderOptions = {
-            slidesPerView: 7,
+            slidesPerView: 5,
             // centeredSlides: true,
-            spaceBetween: 40,
+            spaceBetween: 20,
             threshold: 10,
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
-        }
-
+            slideToClickedSlide: true,
+            breakpoints: {
+                
+                769: {
+                    slidesPerView: 7,
+                    spaceBetween: 40,
+                }
+            }
+        };
 
         mainSliderOptions.thumbs.swiper = new Swiper(thumbsContainer, thumbsSliderOptions);
 
         new Swiper(mainContainer, mainSliderOptions);
-
-        
-    })
+    });
 }

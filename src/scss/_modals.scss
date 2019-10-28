@@ -94,6 +94,10 @@
             background-color: $primary-red;
             padding: 2rem;
             box-shadow: 0px 1rem 2rem 0px rgba(244, 3, 82, 0.35);  
+            margin-top: 6rem;
+            @include breakpoint(mobile) {
+                margin-top: 0;
+            }
             & > span {
                 position: relative;
                 display: flex;
