@@ -7,6 +7,7 @@ import paymentsSlider from './paymentsSlider';
 import PerfectScrollbar from 'perfect-scrollbar';
 import innerSlides from './innerSlides';
 import successSlider from './successSlider';
+import articleScroll from './articleScroll';
 
 export default function() {
 
@@ -87,6 +88,10 @@ export default function() {
             // inner slides
 
             innerSlides();
+
+            // Article scroll
+
+            articleScroll();
         },
         afterLoad: isHomeSlide,
         onLeave: isHomeSlide
