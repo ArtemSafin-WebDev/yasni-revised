@@ -1,0 +1,593 @@
+.infra {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include breakpoint(mobile) {
+        // padding-bottom: 3rem;
+        &::before {
+            content: '';
+            width: 100vw;
+            position: absolute;
+            left: calc((100vw - 100%) / 2 * -1);
+            top: 0;
+            bottom: 0;
+            background-color: #f1f4f9;
+            z-index: -3;
+        }
+        &::after {
+            content: '';
+            width: calc(100% + 2.5rem);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -2;
+            background-color: #fff;
+        }
+    }
+}
+
+.infra__heading {
+    @include sectionHeader();
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    @include breakpoint(mobile) {
+        margin-top: 6rem;
+    }
+}
+
+.infra__tabs {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.infra__navigation {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+        padding-bottom: 3rem;
+    }
+}
+
+.infra__navigation-list {
+    margin: 0 -1.5rem;
+    display: flex;
+    flex-grow: 1;
+    @include breakpoint(mobile) {
+        margin: -20px;
+        flex-grow: 0;
+        flex-wrap: wrap;
+    }
+    @include breakpoint(small-mobile) {
+        margin: -10px;
+    }
+}
+
+.infra__navigation-list-item {
+    width: 25%;
+    padding: 0 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+        width: 50%;
+        flex-grow: 0;
+        padding: 20px;
+    }
+    @include breakpoint(small-mobile) {
+        padding: 10px;
+    }
+}
+
+.infra__navigation-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    padding: 5rem 3rem;
+    position: relative;
+    z-index: 20;
+    @include hover-active {
+        .infra__navigation-card-image {
+            transform: scale(1.05);
+        }
+    }
+    @include breakpoint(mobile) {
+        padding: 4rem;
+        min-height: 48rem;
+    }
+    @include breakpoint(small-mobile) {
+        min-height: 35rem;
+        padding: 2.5rem;
+    }
+}
+
+.infra__navigation-card-image-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: $secondary-blue;
+    overflow: hidden;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba($secondary-blue, 0.7);
+        z-index: 2;
+        @supports (mix-blend-mode: soft-light) {
+            display: none;
+        }
+    }
+}
+
+.infra__navigation-card-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s;
+    @include objectFitCover();
+    @supports (mix-blend-mode: soft-light) {
+        z-index: 5;
+        mix-blend-mode: soft-light;
+    }
+}
+
+.infra__navigation-card-icon {
+    width: 7.2rem;
+    height: 7.2rem;
+    display: block;
+    @include objectFitContain();
+}
+
+.infra__navigation-card-name {
+    font-size: 3rem;
+    font-family: $bebas;
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+    color: white;
+    margin-top: 1.5rem;
+}
+
+.infra__slides {
+    position: absolute;
+    left: -3rem;
+    right: -1.5rem;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    pointer-events: none;
+    @include breakpoint(mobile) {
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+}
+
+.infra__slide {
+    pointer-events: initial;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s linear 0.5s;
+    z-index: 10;
+    @include breakpoint(mobile) {
+        height: auto;
+        min-height: 100%;
+    }
+    &.active {
+        transition: all 0.5s;
+        opacity: 1;
+        visibility: visible;
+        z-index: 20;
+        @include breakpoint(mobile) {
+            position: static;
+        }
+    }
+}
+
+.infra__slide-content {
+    padding-left: 3rem;
+    padding-right: 1.5rem;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    @include breakpoint(mobile) {
+        padding: 0;
+        height: auto;
+        overflow: visible;
+    }
+}
+
+.infra__social-slide {
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .infra__decorative {
+        z-index: 0;
+    }
+
+    > *:not(.infra__decorative) {
+        position: relative;
+        z-index: 5;
+    }
+}
+
+.infra__social-slide-heading {
+    @include sectionHeader();
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+}
+
+.infra__social-map {
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid $border-color;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: -1.5rem;
+        height: 1px;
+        background-color: $border-color;
+        z-index: 20;
+    }
+    @include breakpoint(mobile) {
+        border: none;
+        margin-left: -$mobile-content-padding;
+        margin-right: -$mobile-content-padding;
+        flex-grow: 0;
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.infra__social-map-container {
+    padding-bottom: 56.25%;
+    background-color: white;
+    margin-right: -1.5rem;
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(mobile) {
+        margin-right: 0;
+        border-top: 1px solid $border-color;
+        // margin-right: -$mobile-content-padding;
+    }
+}
+
+.infra__social-map-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+.infra__social-map__location {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    &--orenburg {
+        top: 6%;
+        left: 3%;
+    }
+    &--toser {
+        top: 34%;
+        left: 10%;
+        .infra__social-map__location-circle {
+            border-color: $primary-red;
+        }
+    }
+    &--actobe {
+        top: 82%;
+        left: 36%;
+        @include breakpoint(mobile) {
+            top: 78%;
+        }
+    }
+}
+
+.infra__social-map__location-name {
+    font-weight: 600;
+    font-size: 3rem;
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+    }
+}
+
+.infra__social-map__location-distance {
+    font-size: 2.4rem;
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+    }
+}
+
+.infra__social-map__location-circle {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-width: 0.6rem;
+    border-style: solid;
+    border-color: $secondary-blue;
+    border-radius: 50%;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.infra__social-map-legend-list {
+    display: flex;
+    margin-right: calc(-1.5rem - 1px);
+    // margin-top: auto;
+    flex-grow: 1;
+    @include breakpoint(mobile) {
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+}
+
+.infra__social-map-legend-list-item {
+    width: 25%;
+    flex-grow: 1;
+    padding: 3rem;
+    display: flex;
+    border: 1px solid $border-color;
+    padding-right: 2rem;
+    margin-left: -1px;
+    @include breakpoint(mobile) {
+        width: 50%;
+        margin-left: 0;
+        flex-grow: 0;
+        padding-right: 4rem;
+        border-left: none;
+        border-top: none;
+        &:nth-child(1),
+        &:nth-child(2) {
+            border-top: 1px solid $border-color;
+        }
+        &:nth-child(even) {
+            border-right: none;
+        }
+    }
+}
+
+.infra__social-map-legend-color {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    margin-right: 2.4rem;
+    border-width: 0.6rem;
+    border-color: $secondary-blue;
+    border-style: solid;
+    &--violet {
+        border-color: #6b3af6;
+    }
+    &--orange {
+        border-color: #ffa812;
+    }
+    &--blue {
+        border-color: #45caff;
+    }
+    &--pink {
+        border-color: #e64e7c;
+    }
+}
+
+.infra__social-map-legend-info {
+    width: 30%;
+    flex-grow: 1;
+}
+
+.infra__social-map-legend-amount {
+    font-weight: 700;
+    font-size: 4.8rem;
+    color: $black-text;
+    display: block;
+    line-height: 1;
+    margin-top: -0.95rem;
+}
+
+.infra__social-map-legend-type {
+    font-weight: 600;
+    font-size: 1.8rem;
+    display: block;
+}
+
+.infra__standard-slide {
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .infra__decorative {
+        z-index: 0;
+    }
+
+    > *:not(.infra__decorative) {
+        position: relative;
+        z-index: 5;
+    }
+}
+
+.infra__standard-slide-heading {
+    @include sectionHeader();
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+}
+
+.infra__standard-slide-row {
+    display: flex;
+    flex-grow: 1;
+    // background-color: yellow;
+}
+
+.infra__standard-slide-left-column {
+    // background-color: red;
+    width: calc(50% + 1.5rem);
+    position: relative;
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.infra__standard-slide-image-container {
+    position: absolute;
+    left: -3rem;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.infra__standard-slide-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+.infra__standard-slide-right-column {
+    width: 30%;
+    flex-grow: 1;
+    background-color: #fff;
+    border-top: 1px solid $border-color;
+    // background-color: green;
+    margin-right: -1.5rem;
+    @include breakpoint(mobile) {
+        margin-right: 0;
+        border: none;
+        background: transparent;
+    }
+}
+
+.infra__standard-slide-list {
+    padding-top: 4rem;
+    padding-left: 6.5rem;
+    padding-right: 5rem;
+    @include breakpoint(mobile) {
+        padding: 0;
+        margin-top: 1rem;
+    }
+}
+
+.infra__standard-slide-close-btn {
+    position: absolute !important;
+    right: 2rem;
+    top: 5rem;
+    display: block;
+    z-index: 50;
+    transition: color 0.2s;
+    @include linkColor {
+        color: $border-color;
+    }
+    @include hover-active {
+        color: $secondary-blue;
+    }
+    > svg {
+        fill: currentColor;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: block;
+    }
+}
+
+.infra__standard-slide-list-item {
+    margin-bottom: 5rem;
+    display: flex;
+    &::before {
+        content: '0' counter(ordered-list);
+        width: 6.5rem;
+        height: 6.5rem;
+        background-color: $secondary-blue;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 3rem;
+        letter-spacing: 0.05rem;
+        text-transform: uppercase;
+        flex-shrink: 0;
+        margin-right: 2.5rem;
+    }
+}
+
+.infra__standard-slide-list-item-content {
+    width: 30%;
+    flex-grow: 1;
+}
+
+.infra__standard-slide-list-item-heading {
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 0.05rem;
+    color: $black-text;
+    text-transform: uppercase;
+    margin-top: -0.7rem;
+}
+
+.infra__standard-slide-list-item-text {
+    font-size: 2.4rem;
+    margin-top: 1rem;
+}
+
+.infra__decorative {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    > div {
+        margin: 0 -1.5rem;
+        display: flex;
+        height: 100%;
+        @include breakpoint(mobile) {
+            margin: 0 -20px;
+        }
+        @include breakpoint(small-mobile) {
+            margin: 0 -10px;
+        }
+        > div {
+            width: 25%;
+            height: 100%;
+            padding: 0 1.5rem;
+            @include breakpoint(mobile) {
+                width: 50%;
+                padding: 0 20px;
+                &:nth-child(3),
+                &:nth-child(4) {
+                    display: none;
+                }
+            }
+            @include breakpoint(small-mobile) {
+                padding: 0 10px;
+            }
+            > div {
+                border-left: 1px solid $border-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

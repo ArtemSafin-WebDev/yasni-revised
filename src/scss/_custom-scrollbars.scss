@@ -11,7 +11,7 @@
 
 .ps__rail-y {
     opacity: 1 !important;
-    width: 15px !important;
+    width: 11px !important;
     background: transparent !important;
     z-index: 100;
     
@@ -19,8 +19,8 @@
 
 
 .ps__thumb-y {
-    background: $secondary-blue !important;
+    background: rgba($secondary-blue, .8) !important;
     border-radius: 0 !important;
-    width: 11px !important;
+    width: 7px !important;
     
 }
