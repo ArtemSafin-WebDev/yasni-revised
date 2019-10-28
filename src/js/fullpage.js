@@ -8,6 +8,7 @@ import PerfectScrollbar from 'perfect-scrollbar';
 import innerSlides from './innerSlides';
 import successSlider from './successSlider';
 import articleScroll from './articleScroll';
+import historyDetailsSlider from './historyDetailsSlider';
 
 export default function() {
 
@@ -88,6 +89,10 @@ export default function() {
             // inner slides
 
             innerSlides();
+
+            // history details slider
+
+            historyDetailsSlider();
 
             // Article scroll
 

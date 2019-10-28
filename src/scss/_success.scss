@@ -351,6 +351,18 @@
     @include breakpoint(mobile) {
         height: auto;
         min-height: 100%;
+        background-color: transparent;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            top: 0;
+            right: -$mobile-content-padding;
+            left: 0;
+            bottom: 0;
+            border-top: 1px solid $border-color;
+        }
     }
     &.active {
         transition: all 0.5s;
@@ -420,14 +432,39 @@
 .success__history-details-slider-panel {
     display: flex;
     height: 13rem;
-    border-top: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
+    
+    
 }
 
 
 .success__history-details-slider-pagination {
     width: 50%;
-    border-radius: 1px solid $border-color;
+    display: flex;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+}
+
+.success__history-details-slider-pagination-cell {
+    font-size: 2.4rem;
+    width: 50%;
+    margin-left: auto;
+    border-left: 1px solid $border-color;
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    .swiper-pagination-current {
+        margin-right: 0.5rem;
+    }
+    .swiper-pagination-total {
+        margin-left: 0.5rem;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin: 0;
+        border: none;
+        font-size: 3rem;
+    }
 }
 
 
@@ -470,6 +507,9 @@
     
     border-top: 1px solid $border-color;
     border-right: 1px solid $border-color;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
 }
 
 
@@ -478,12 +518,22 @@
     flex-shrink: 0;
     padding: 0 1.5rem;
     padding-top: 1.5rem;
+    @include breakpoint(mobile) {
+        flex-shrink: 1;
+        width: 100%;
+        padding: 2rem;
+        padding-bottom: 0;
+    }
 }
 
 
 .success__history-details-card-right-column {
     width: 50%;
     flex-grow: 1;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
 }
 
 
@@ -495,10 +545,22 @@
     padding-left: 1.5rem;
     padding-right: 9rem;
     padding-top: 2.5rem;
+    @include breakpoint(mobile) {
+        padding: 0;
+        height: auto;
+        overflow: visible;
+        padding: 2rem;
+        margin-top: 1rem;
+        border-top: 1px solid $border-color;
+    }
     p {
         font-size: 2.2rem;
         color: $black-text;
         margin-bottom: 2rem;
+        @include breakpoint(mobile) {
+            font-size: 2.4rem;
+            line-height: 1.4;
+        }
     }
 
     .ps__rail-y {
@@ -547,6 +609,9 @@
 .success__history-details-card-stats-key {
     font-size: 1.8rem;
     color: #a1a1a1;
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+    }
 }
 
 
@@ -555,4 +620,10 @@
     font-weight: 600;
     color: $black-text;
     margin-top: 0.2rem;
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 1.4;
+    }
 }
+
+

@@ -26,6 +26,7 @@ export default function() {
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
             slideToClickedSlide: true,
+            centerInsufficientSlides: true,
             breakpoints: {
                 
                 769: {
