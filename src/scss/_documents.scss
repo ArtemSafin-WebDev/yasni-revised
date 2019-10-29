@@ -1,0 +1,295 @@
+.documents {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include fullwidthBG {
+        background-color: white;
+    }
+    @include breakpoint(mobile) {
+        @include fullwidthBG {
+            background-color: #f1f4f9;
+            border-top: 1px solid $border-color;
+        }
+    }
+}
+
+.documents__heading {
+    @include sectionHeader();
+
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+    @include breakpoint(mobile) {
+        margin-top: 6rem;
+    }
+}
+
+.documents__content {
+    flex-grow: 1;
+}
+
+.documents__slider {
+    @include breakpoint(mobile) {
+        margin-left: -$mobile-content-padding;
+        margin-right: -$mobile-content-padding;
+        border-top: 1px solid $border-color;
+    }
+    .swiper-container {
+        @include breakpointMF(small-tablet) {
+            margin: 0;
+            position: static;
+            overflow: initial;
+            display: block;
+        }
+    }
+    .swiper-wrapper {
+        @include breakpointMF(small-tablet) {
+            box-sizing: border-box;
+            position: static;
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .swiper-slide {
+        
+        display: flex;
+        flex-direction: column;
+        @include breakpointMF(small-tablet) {
+            border: 1px solid $border-color;
+            position: static;
+            width: 50%;
+            border-top: none;
+            &:nth-child(1),
+            &:nth-child(2) {
+                border-top: 1px solid $border-color;
+            }
+            &:nth-child(even) {
+                border-left: none;
+            }
+        }
+    }
+}
+
+.documents__card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 35rem;
+    background-color: #fff;
+    transition: box-shadow 0.2s;
+    position: relative;
+    @include breakpoint(mobile) {
+        min-height: 6.5rem;
+    }
+    @include linkColor {
+        color: $secondary-blue;
+    }
+
+    @include hover-active {
+        box-shadow: 0px 20px 40px 0px rgba(155, 177, 201, 0.65);
+        z-index: 10;
+        .documents__download-btn {
+            background-color: $primary-red;
+        }
+    }
+}
+
+.documents__card-format-icon {
+    width: 6.5rem;
+    height: 6.5rem;
+    background-color: $secondary-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 3rem;
+    svg {
+        fill: white;
+    }
+    .icon-doc {
+        width: 4.2rem;
+        height: 4.2rem;
+    }
+}
+
+.documents__card-title {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+    font-family: $bebas;
+    width: 50%;
+    flex-grow: 1;
+    margin-top: 2.5rem;
+    padding-right: 12rem;
+    @include breakpoint(mobile) {
+        font-size: 3.2rem;
+    }
+}
+
+.documents__card-top-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.documents__card-text {
+    padding: 0 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: $black-text;
+    font-size: 2.2rem;
+    padding-right: 8rem;
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+    }
+}
+
+.documents__download-btn {
+    font-size: 2.2rem;
+    letter-spacing: 0.05rem;
+    font-weight: 600;
+    color: white;
+    background-color: #bacbdb;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 5.5rem;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-top: auto;
+    transition: background-color 0.2s;
+    @include breakpoint(mobile) {
+        padding: 1.8rem 4rem;
+    }
+    svg {
+        fill: white;
+        flex-shrink: 0;
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-left: 2.4rem;
+    }
+}
+
+.documents__decorative {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    > div {
+        margin: 0 -1.5rem;
+        display: flex;
+        height: 100%;
+        @include breakpoint(mobile) {
+            margin: 0 -20px;
+        }
+        @include breakpoint(small-mobile) {
+            margin: 0 -10px;
+        }
+        > div {
+            width: 25%;
+            height: 100%;
+            padding: 0 1.5rem;
+            @include breakpoint(mobile) {
+                width: 50%;
+                padding: 0 20px;
+                &:nth-child(3),
+                &:nth-child(4) {
+                    display: none;
+                }
+            }
+            @include breakpoint(small-mobile) {
+                padding: 0 10px;
+            }
+            > div {
+                border-left: 1px solid $border-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.documents__slider-panel {
+    display: none;
+    border-top: 1px solid $border-color;
+    
+    @include breakpoint(mobile) {
+        display: flex;
+    }
+}
+
+.documents__slider-panel-pagination-column,
+.documents__slider-panel-navigation-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.documents__slider-panel-pagination-column {
+    width: calc(50% + 10px);
+}
+
+.documents__slider-panel-navigation-column {
+    width: calc(50% - 10px);
+}
+
+.documents__slider-panel-pagination {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background-color: #fff;
+    .swiper-pagination-total {
+        margin-left: 0.5rem;
+    }
+    .swiper-pagination-current {
+        margin-right: 0.5rem;
+    }
+}
+
+.documents__slider-panel-navigation {
+    display: flex;
+    width: 100%;
+    // @include breakpoint(mobile) {
+    //     padding-left: 20px;
+    // }
+    // @include breakpoint(small-mobile) {
+    //     padding-left: 10px;
+    // }
+}
+
+.documents__slider-btn {
+    width: 50%;
+    color: white;
+    background-color: $secondary-blue;
+    transition: color 0.2s, background-color 0.2s;
+    @include hover-active {
+        background-color: #5e87b0;
+    }
+    &.swiper-button-disabled {
+        cursor: default;
+        pointer-events: none;
+        background-color: #5e87b0;
+    }
+    > span {
+        display: block;
+        position: relative;
+        padding-bottom: 100%;
+        > svg {
+            fill: currentColor;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+}

@@ -6,11 +6,13 @@ import formScrollbar from './formScrollbar';
 import schemaSlider from './schemaSlider';
 import successSlider from './successSlider';
 import paymentsSlider from './paymentsSlider';
+import documentsSlider from './documentsSlider';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
     detectTouch();
     successSlider();
+    documentsSlider();
     schemaSlider();
     paymentsSlider();
     fullpage();
