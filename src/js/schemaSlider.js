@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import { MOBILE_WIDTH } from './constants';
 
 export default function() {
     const schemaSliders = Array.from(document.querySelectorAll('.js-schema-slider'));
@@ -16,7 +17,7 @@ export default function() {
             pagination: {
                 el: block.querySelector('.schema__steps-pagination-indication'),
                 type: 'bullets',
-                renderBullet: function (index, className) {
+                renderBullet: function(index, className) {
                     console.log(className);
                     return `
                         <span class="${className}">
@@ -33,8 +34,7 @@ export default function() {
                 clickable: true
             }
         };
-        
-    
+
         const widthChange = mq => {
             if (swiperInstance) {
                 swiperInstance.destroy();
@@ -46,11 +46,11 @@ export default function() {
                 swiperInstance = new Swiper(container, options);
             }
         };
-    
+
         if (matchMedia) {
-            const mq = window.matchMedia('(max-width: 768px)');
+            const mq = window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`);
             mq.addListener(widthChange);
             widthChange(mq);
         }
-    })
+    });
 }

@@ -86,7 +86,7 @@
     padding-bottom: 2rem;
     padding-top: 1rem;
     border-bottom: 1px solid $border-color;
-    @include breakpoint(mobile) {
+    @include breakpoint(laptop) {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -105,7 +105,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    @include breakpoint(mobile) {
+    @include breakpoint(laptop) {
         padding-left: 1rem;
     }
     &::before {
@@ -119,7 +119,7 @@
         background-repeat: repeat-x;
         background-position: 0 center;
         background-size: 10px 5px;
-        @include breakpoint(mobile) {
+        @include breakpoint(laptop) {
             background-size: 6px 3px;
             left: 2rem;
             right: 2rem;
@@ -171,7 +171,7 @@
     white-space: nowrap;
     user-select: none;
     @include breakpoint(mobile) {
-        margin-right: 4rem;
+        margin-right: 2rem;
         font-size: 2.2rem;
     }
     &--active {
@@ -224,6 +224,7 @@
     flex-grow: 1;
     position: relative;
     width: 100%;
+    
     @include breakpoint(mobile) {
         padding-left: 2rem;
         padding-top: 2rem;
@@ -282,6 +283,7 @@
 .schema__card-paragraph {
     font-size: 2.4rem;
     margin-top: 3rem;
+    
 }
 
 .schema__card-list {
@@ -318,7 +320,7 @@
     font-family: $bebas;
     color: $black-text;
     font-size: 3rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 

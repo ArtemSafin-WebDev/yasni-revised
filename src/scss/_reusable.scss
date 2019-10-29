@@ -3,6 +3,7 @@
     color: white;
     transition: color .2s, background-color .2s;
     background-color: $secondary-blue;
+    width: 50%;
     @include hover-active {
         background-color: #5e87b0;
     }
@@ -17,12 +18,17 @@
         align-items: center;
         justify-content: center;
         background-color: inherit;
-        width: 15rem;
-        height: 15rem;
+        width: 100%;
+        padding-bottom: 100%;
+        position: relative;
         > svg {
             fill: currentColor;
-            width: 5rem;
-            height: 5rem;
+            width: 40%;
+            height: 40%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 }

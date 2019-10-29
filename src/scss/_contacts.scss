@@ -1,0 +1,186 @@
+.contacts {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include fullwidthBG {
+        background-color: white;
+    }
+    @include breakpoint(mobile) {
+        @include fullwidthBG {
+            background-color: #f1f4f9;
+            border-top: 1px solid $border-color;
+        }
+    }
+}
+
+.contacts__heading {
+    @include sectionHeader();
+    text-align: center;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+    @include breakpoint(mobile) {
+        text-align: left;
+        margin-top: 6rem;
+    }
+}
+
+
+.contacts__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.contacts__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1.5rem;
+    @include breakpoint(mobile) {
+        
+    }
+}
+
+
+.contacts__list-item {
+    width: 50%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+
+.contacts__card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border-color;
+    background-color: #fff;
+    flex-grow: 1;
+    @include breakpoint(mobile) {
+        margin-left: -$mobile-content-padding;
+        margin-right: -$mobile-content-padding;
+    }
+}
+
+
+.contacts__card-info {
+    padding: 3rem 4rem;
+    
+    border-bottom: 1px solid $border-color;
+    flex-grow: 1;
+}
+
+
+.contacts__card-data {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contacts__card-data-row {
+    margin-bottom: 1rem;
+}
+
+
+.contacts__card-data-key {
+    font-family: $bebas;
+    color: #a1a1a1;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    letter-spacing: .025rem;
+    @include breakpoint(mobile) {
+        font-size: 2.5rem;
+    }
+}
+
+
+.contacts__card-data-value {
+    color: $black-text;
+    font-size: 2.2rem;
+    @include breakpoint(mobile) {
+        font-size: 2.5rem;
+    }
+}
+
+.contacts__card-organization {
+    font-size: 2.4rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    color: $secondary-blue;
+    font-family: $bebas;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    @include breakpoint(mobile) {
+        font-size: 3.2rem;
+    }
+}
+
+
+
+.contacts__card-map-container {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    background-color: $secondary-blue;
+    @include breakpoint(mobile) {
+        padding-bottom: 65%;
+    }
+}
+
+
+.contacts__card-map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.contacts__decorative {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    > div {
+        margin: 0 -1.5rem;
+        display: flex;
+        height: 100%;
+        @include breakpoint(mobile) {
+            margin: 0 -20px;
+        }
+        @include breakpoint(small-mobile) {
+            margin: 0 -10px;
+        }
+        > div {
+            width: 25%;
+            height: 100%;
+            padding: 0 1.5rem;
+            @include breakpoint(mobile) {
+                width: 50%;
+                padding: 0 20px;
+                &:nth-child(3),
+                &:nth-child(4) {
+                    display: none;
+                }
+            }
+            @include breakpoint(small-mobile) {
+                padding: 0 10px;
+            }
+            > div {
+                border-left: 1px solid $border-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import { MOBILE_WIDTH } from './constants';
 
 export default function() {
     let successSlider = document.querySelector('.js-success-slider');
@@ -63,13 +64,13 @@ export default function() {
         if (detailsSwiperInstance) {
             detailsSwiperInstance.destroy();
             detailsSwiperInstance = null;
-            detailsOptions.autoHeight = window.matchMedia('(max-width: 768px)') ? true : false;
+            detailsOptions.autoHeight = mq.matches ? true : false;
             detailsSwiperInstance = new Swiper(detailsContainer, detailsOptions);
 
             successSliderInstance.controller.control = detailsSwiperInstance;
             detailsSwiperInstance.controller.control = successSliderInstance;
         } else {
-            detailsOptions.autoHeight = window.matchMedia('(max-width: 768px)') ? true : false;
+            detailsOptions.autoHeight = mq.matches ? true : false;
             detailsSwiperInstance = new Swiper(detailsContainer, detailsOptions);
             successSliderInstance.controller.control = detailsSwiperInstance;
             detailsSwiperInstance.controller.control = successSliderInstance;
@@ -77,7 +78,7 @@ export default function() {
     };
 
     if (matchMedia) {
-        const mq = window.matchMedia('(max-width: 768px)');
+        const mq = window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`);
         mq.addListener(widthChange);
         widthChange(mq);
     }

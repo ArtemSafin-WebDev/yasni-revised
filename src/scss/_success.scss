@@ -152,6 +152,9 @@
 .success__links-slider-thumbs-width-wrapper {
     width: 60%;
     margin: 0 auto;
+    @include breakpoint(desktop) {
+        width: 80%;
+    }
     @include breakpoint(mobile) {
         width: 100%;
         margin: 0;
@@ -431,7 +434,7 @@
 
 .success__history-details-slider-panel {
     display: flex;
-    height: 13rem;
+    // height: 13rem;
     
     
 }
@@ -491,15 +494,25 @@
         pointer-events: none;
     }
     > span {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 13rem;
+        @include breakpoint(mobile) {
+            width: 100%;
+            padding-bottom: 100%;
+            height: auto;
+        }
+        
         > svg {
             fill: white;
             width: 5rem;
             height: 2.4rem;
             display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 }

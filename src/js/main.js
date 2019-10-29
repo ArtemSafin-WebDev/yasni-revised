@@ -7,6 +7,8 @@ import schemaSlider from './schemaSlider';
 import successSlider from './successSlider';
 import paymentsSlider from './paymentsSlider';
 import documentsSlider from './documentsSlider';
+import smoothScrollToForm from './smoothScrollToForm';
+import yandexMaps from './yandexMaps';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -15,8 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     documentsSlider();
     schemaSlider();
     paymentsSlider();
+    yandexMaps();
     fullpage();
     burgerMenu();
     formScrollbar();
-    
+    smoothScrollToForm();
 });

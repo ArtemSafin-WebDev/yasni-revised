@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import { MOBILE_WIDTH } from './constants';
 
 export default function() {
     const paymentsSliders = Array.from(document.querySelectorAll('.js-payments-slider'));
@@ -18,8 +19,8 @@ export default function() {
             pagination: {
                 el: slider.querySelector('.js-payments-slider-pagination'),
                 type: 'fraction',
-                formatFractionCurrent: number => (number.toString().length === 1 && number !== 0) ? '0' + number : number,
-                formatFractionTotal: number => (number.toString().length === 1 && number !== 0) ? '0' + number : number
+                formatFractionCurrent: number => (number.toString().length === 1 && number !== 0 ? '0' + number : number),
+                formatFractionTotal: number => (number.toString().length === 1 && number !== 0 ? '0' + number : number)
             },
             spaceBetween: 20,
             breakpoints: {
@@ -51,7 +52,7 @@ export default function() {
         };
 
         if (matchMedia) {
-            const mq = window.matchMedia('(max-width: 768px)');
+            const mq = window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`);
             mq.addListener(widthChange);
             widthChange(mq);
         }

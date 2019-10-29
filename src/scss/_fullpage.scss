@@ -83,11 +83,21 @@
     &:not(.fullpage-section-inner--intro) {
         padding-left: $form-width + 3rem;
         padding-right: $sidebar-width + 1.5rem;
+        @include breakpoint(laptop) {
+            padding-left: $laptop-form-width + 3rem;
+        }
         @include breakpoint(mobile) {
             padding-left: 0;
             padding-right: 0;
         }
     }
+}
+
+
+.fp-scroller {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 

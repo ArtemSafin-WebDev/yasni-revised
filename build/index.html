@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet" />
         <link rel="stylesheet" href="css/styles.min.css" />
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=d41198b4-79cf-4ff2-83a6-aaff2a77a15c&lang=ru_RU" type="text/javascript"></script>
         <title>
             Главная страница
         </title>
@@ -97,25 +98,121 @@
                             <li class="main-nav__list-item" data-menuanchor="infrastructure">
                                 <a href="#infrastructure" class="main-nav__link">Инфраструктура</a>
                             </li>
-                            <li class="main-nav__list-item">
-                                <a href="#" class="main-nav__link">Истории успеха</a>
+                            <li class="main-nav__list-item" data-menuanchor="success">
+                                <a href="#success" class="main-nav__link">Истории успеха</a>
                             </li>
-                            <li class="main-nav__list-item">
-                                <a href="#" class="main-nav__link">Сравнение</a>
+                            <li class="main-nav__list-item" data-menuanchor="comparison">
+                                <a href="#comaprison" class="main-nav__link">Сравнение</a>
                             </li>
-                            <li class="main-nav__list-item">
-                                <a href="#" class="main-nav__link">Схема</a>
+                            <li class="main-nav__list-item" data-menuanchor="schema">
+                                <a href="#schema" class="main-nav__link">Схема</a>
                             </li>
-                            <li class="main-nav__list-item">
-                                <a href="#" class="main-nav__link">Документы</a>
+                            <li class="main-nav__list-item" data-menuanchor="documents">
+                                <a href="#documents" class="main-nav__link">Документы</a>
                             </li>
-                            <li class="main-nav__list-item">
-                                <a href="#" class="main-nav__link">Контакты</a>
+                            <li class="main-nav__list-item" data-menuanchor="contacts">
+                                <a href="#contacts" class="main-nav__link">Контакты</a>
                             </li>
                         </ul>
-                        <a href="#" class="main-nav__send-application">
+                        <a href="#mobile-form" class="main-nav__send-application js-anchor">
                             Оформить заявку
                         </a>
+                        <div class="main-nav__contacts">
+                            <div class="main-nav__contacts-block">
+                                <h5 class="contacts__card-organization">
+                                    АО «Корпорация развития Оренбургской области»
+                                </h5>
+                                <div class="contacts__card-data">
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Телефон:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            8 (3532) 44-07-92
+                                        </span>
+                                    </div>
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Телефон:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            8 (3532) 44-07-93
+                                        </span>
+                                    </div>
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Email:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            corporation@orbinvest.ru
+                                        </span>
+                                    </div>
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Почтовый адрес:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            г. Оренбург ул. Цвиллинга 14/1
+                                        </span>
+                                    </div>
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Фактический адрес:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            г. Оренбург ул. Цвиллинга 14/1
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-nav__contacts-block">
+                                <h5 class="contacts__card-organization">
+                                    Администрация муниципального образования Ясненский городской округ
+                                </h5>
+                                <div class="contacts__card-data">
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Телефон:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            8 (35368) 2-14-12
+                                        </span>
+                                    </div>
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Телефон:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            8 (987) 881-08-01
+                                        </span>
+                                    </div>
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Email:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            bip@ys.orb.ru
+                                        </span>
+                                    </div>
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Почтовый адрес:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            462781, Ясный, ул. Ленина, 17
+                                        </span>
+                                    </div>
+                                    <div class="contacts__card-data-row">
+                                        <span class="contacts__card-data-key">
+                                            Фактический адрес:
+                                        </span>
+                                        <span class="contacts__card-data-value">
+                                            462781, Ясный, ул. Ленина, 17
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <ul class="main-nav__social-list">
                             <li class="main-nav__social-list-item">
                                 <a href="#" class="main-nav__social-link">
@@ -166,7 +263,7 @@
                     </a>
                 </div>
                 <div class="fullpage-dots" id="fullpage-dots"></div>
-                <a href="#" class="next-slide-btn">
+                <a href="#" class="next-slide-btn" id="next-slide-btn">
                     <svg width="40" height="90" aria-hidden="true" class="icon-next-slide-arrow">
                         <use xlink:href="#next-slide-arrow" />
                     </svg>
@@ -305,7 +402,7 @@
                                     </div>
                                 </div>
 
-                                <div class="mobile-form">
+                                <div class="mobile-form" id="mobile-form">
                                     <h3 class="contact-form__heading">
                                         Стать инвестором
                                     </h3>
@@ -1360,6 +1457,135 @@
                                         </div>
 
                                         <div class="payments__decorative">
+                                            <div>
+                                                <div><div></div></div>
+                                                <div><div></div></div>
+                                                <div><div></div></div>
+                                                <div><div></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section fp-auto-height-responsive" data-anchor="contacts">
+                            <div class="fullpage-section-inner">
+                                <div class="contacts">
+                                    <div class="contacts__content">
+                                        <h2 class="contacts__heading">
+                                            Контакты
+                                        </h2>
+                                        <ul class="contacts__list">
+                                            <li class="contacts__list-item">
+                                                <div class="contacts__card">
+                                                    <div class="contacts__card-info">
+                                                        <h5 class="contacts__card-organization">
+                                                            АО «Корпорация развития Оренбургской области»
+                                                        </h5>
+                                                        <div class="contacts__card-data">
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Телефон:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    8 (3532) 44-07-92
+                                                                </span>
+                                                            </div>
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Телефон:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    8 (3532) 44-07-93
+                                                                </span>
+                                                            </div>
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Email:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    corporation@orbinvest.ru
+                                                                </span>
+                                                            </div>
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Почтовый адрес:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    г. Оренбург ул. Цвиллинга 14/1
+                                                                </span>
+                                                            </div>
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Фактический адрес:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    г. Оренбург ул. Цвиллинга 14/1
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="contacts__card-map-container">
+                                                        <div class="contacts__card-map js-yandex-map" data-coords="51.769899, 55.096479"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="contacts__list-item">
+                                                <div class="contacts__card">
+                                                    <div class="contacts__card-info">
+                                                        <h5 class="contacts__card-organization">
+                                                            Администрация муниципального образования Ясненский городской округ
+                                                        </h5>
+                                                        <div class="contacts__card-data">
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Телефон:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    8 (35368) 2-14-12
+                                                                </span>
+                                                            </div>
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Телефон:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    8 (987) 881-08-01
+                                                                </span>
+                                                            </div>
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Email:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    bip@ys.orb.ru
+                                                                </span>
+                                                            </div>
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Почтовый адрес:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    462781, Ясный, ул. Ленина, 17
+                                                                </span>
+                                                            </div>
+                                                            <div class="contacts__card-data-row">
+                                                                <span class="contacts__card-data-key">
+                                                                    Фактический адрес:
+                                                                </span>
+                                                                <span class="contacts__card-data-value">
+                                                                    462781, Ясный, ул. Ленина, 17
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="contacts__card-map-container">
+                                                        <div class="contacts__card-map js-yandex-map" data-coords="51.769899, 55.096479"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="contacts__decorative">
                                             <div>
                                                 <div><div></div></div>
                                                 <div><div></div></div>

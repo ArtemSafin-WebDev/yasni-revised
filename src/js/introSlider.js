@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import { MOBILE_WIDTH } from './constants';
 
 export default function() {
     const introSliders = Array.from(document.querySelectorAll('.js-intro-slider'));
@@ -40,7 +41,7 @@ export default function() {
         };
 
         if (matchMedia) {
-            const mq = window.matchMedia('(max-width: 768px)');
+            const mq = window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`);
             mq.addListener(widthChange);
             widthChange(mq);
         }

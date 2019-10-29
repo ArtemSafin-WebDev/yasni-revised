@@ -7,7 +7,7 @@ import formValidation from './formValidation';
 import PerfectScrollbar from 'perfect-scrollbar';
 import innerSlides from './innerSlides';
 import articleScroll from './articleScroll';
-
+import { MOBILE_WIDTH } from './constants';
 
 export default function() {
 
@@ -23,7 +23,7 @@ export default function() {
         navigation: true,
         paddingTop: '10rem',
         menu: '#fullpage-menu',
-        responsiveWidth: 768.5,
+        responsiveWidth: MOBILE_WIDTH + 1,
         scrollOverflow: true,
         afterRender: function() {
             // Move pagination to another location
@@ -32,6 +32,17 @@ export default function() {
             const dotsContainer = document.querySelector('#fullpage-dots');
             if (dots && dotsContainer) {
                 dotsContainer.appendChild(dots);
+            }
+
+
+            // Arrow down
+
+            const downArrow = document.querySelector('.next-slide-btn');
+
+            if (downArrow) {
+                downArrow.addEventListener('click', function() {
+                    fullpageSlider.moveSectionDown();
+                })
             }
 
 
@@ -75,10 +86,6 @@ export default function() {
             // Form validation
 
             formValidation();
-
-            
-
-           
 
             // inner slides
 

@@ -38,6 +38,9 @@
 
 .intro__nav-block-list {
     padding-left: $side-padding;
+    @include breakpoint(laptop) {
+        padding-left: $laptop-side-padding;
+    }
 }
 
 .intro__nav-block-list-item {
@@ -167,11 +170,13 @@
 
 
 .intro__maps-block-card-info {
-    padding-right: 30rem;
-    
+    // padding-right: 30rem;
+    // padding-right: 19rem;
+    width: 45%;
     align-items: center;
     display: none;
-    min-height: 15rem;
+    // min-height: 15rem;
+    padding: 3rem 0;
     @include breakpoint(mobile) {
         display: flex;
         flex-wrap: wrap;
@@ -289,6 +294,7 @@
     z-index: 100;
     @include breakpoint(mobile) {
         display: flex;
+        width: 45%;
     }
 }
 

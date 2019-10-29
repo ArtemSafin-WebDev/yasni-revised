@@ -1,7 +1,8 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { MOBILE_WIDTH } from './constants';
 
 export default function() {
-    console.log('hello')
+    console.log('hello');
     const menuOpenBtn = document.querySelector('.js-menu-open');
     const menuCloseBtn = document.querySelector('.js-menu-close');
     const menu = document.querySelector('.js-main-nav');
@@ -21,33 +22,31 @@ export default function() {
     }
 
     menuOpenBtn.addEventListener('click', function(event) {
-        console.log('click')
+        console.log('click');
         event.preventDefault();
         openBurgerMenu();
-    })
+    });
     menuCloseBtn.addEventListener('click', function(event) {
         event.preventDefault();
         closeBurgerMenu();
-    })
-
+    });
 
     menuLinks.forEach(link => {
         link.addEventListener('click', function() {
             closeBurgerMenu();
-        })
-    })
-
+        });
+    });
 
     const widthChange = mq => {
         if (!mq.matches) {
             if (menuOpen) {
                 closeBurgerMenu();
             }
-        } 
+        }
     };
 
     if (matchMedia) {
-        const mq = window.matchMedia('(max-width: 768px)');
+        const mq = window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`);
         mq.addListener(widthChange);
         widthChange(mq);
     }
