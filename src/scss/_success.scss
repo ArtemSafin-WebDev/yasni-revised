@@ -442,6 +442,9 @@
     display: flex;
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
+    @include breakpoint(mobile) {
+        border-bottom: none;
+    }
 }
 
 .success__history-details-slider-pagination-cell {

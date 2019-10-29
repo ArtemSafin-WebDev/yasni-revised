@@ -3,15 +3,13 @@ import selects from './customSelects';
 import introLinks from './introLinks';
 import introSlider from './introSlider';
 import formValidation from './formValidation';
-import paymentsSlider from './paymentsSlider';
+
 import PerfectScrollbar from 'perfect-scrollbar';
 import innerSlides from './innerSlides';
-import successSlider from './successSlider';
 import articleScroll from './articleScroll';
-import historyDetailsSlider from './historyDetailsSlider';
+
 
 export default function() {
-
 
     function isHomeSlide(origin, destination, direction) {
         if (destination.anchor === 'intro') {
@@ -78,25 +76,19 @@ export default function() {
 
             formValidation();
 
-            // Payments slider
+            
 
-            paymentsSlider();
-
-            // Success slider
-
-            successSlider();
+           
 
             // inner slides
 
             innerSlides();
 
-            // history details slider
-
-            historyDetailsSlider();
-
             // Article scroll
 
             articleScroll();
+
+            
         },
         afterLoad: isHomeSlide,
         onLeave: isHomeSlide

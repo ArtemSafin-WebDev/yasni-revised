@@ -219,6 +219,11 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    // &::before {
+    //     content: '';
+    //     flex-grow: 1;
+    //     height: 2rem;
+    // }
     .infra__decorative {
         z-index: 0;
     }
@@ -232,7 +237,11 @@
 .infra__social-slide-heading {
     @include sectionHeader();
     margin-top: 8rem;
+    // margin-top: 0;
     margin-bottom: 3rem;
+    @include breakpoint(mobile) {
+        margin-top: 8rem;
+    }
 }
 
 .infra__social-map {
@@ -340,6 +349,7 @@
     margin-right: calc(-1.5rem - 1px);
     // margin-top: auto;
     flex-grow: 1;
+    flex-shrink: 0;
     @include breakpoint(mobile) {
         flex-wrap: wrap;
         margin-right: 0;
@@ -493,7 +503,7 @@
     right: 2rem;
     top: 5rem;
     display: block;
-    z-index: 50;
+    z-index: 50 !important;
     transition: color 0.2s;
     @include linkColor {
         color: $border-color;
