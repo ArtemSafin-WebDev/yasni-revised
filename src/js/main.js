@@ -9,6 +9,7 @@ import paymentsSlider from './paymentsSlider';
 import documentsSlider from './documentsSlider';
 import smoothScrollToForm from './smoothScrollToForm';
 import yandexMaps from './yandexMaps';
+import transportMap from './transportMap';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', function() {
     burgerMenu();
     formScrollbar();
     smoothScrollToForm();
+    transportMap();
 });

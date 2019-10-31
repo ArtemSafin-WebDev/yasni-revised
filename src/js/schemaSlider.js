@@ -7,43 +7,80 @@ export default function() {
     schemaSliders.forEach(block => {
         let swiperInstance = null;
         const container = block.querySelector('.swiper-container');
+        const schemaSteps = block.querySelector('.js-schema-steps-list');
         const options = {
             slidesPerView: 1,
             watchOverflow: true,
+            init: false,
             navigation: {
                 nextEl: block.querySelector('.schema__steps-slider-arrow-btn--next'),
                 prevEl: block.querySelector('.schema__steps-slider-arrow-btn--prev')
-            },
-            pagination: {
-                el: block.querySelector('.schema__steps-pagination-indication'),
-                type: 'bullets',
-                renderBullet: function(index, className) {
-                    console.log(className);
-                    return `
-                        <span class="${className}">
-                            <span class="schema__steps-bullet-square">
-                                <span class="schema__steps-bullet-inner-square">
-                                </span>
-                            </span>
-                            Шаг ${index + 1}
-                        </span>
-                    `;
-                },
-                bulletClass: 'schema__steps-bullet',
-                bulletActiveClass: 'schema__steps-bullet--active',
-                clickable: true
             }
         };
+
+
+        function initializeSwiper(mq) {
+            options.autoHeight = mq.matches ? true : false;
+            swiperInstance = new Swiper(container, options);
+            let steps = [];
+            
+
+            swiperInstance.on('init', function() { 
+                const slidesCount = swiperInstance.slides.length;
+                const currentIndex = swiperInstance.activeIndex;
+                const stepElementTemplate = (index) => `
+                    
+                        <span class="schema__steps-bullet-square">
+                            <span class="schema__steps-bullet-inner-square">
+                            </span>
+                        </span>
+                        Шаг ${index + 1}
+                    
+                `;
+
+                for (let i = 0; i < slidesCount; i++) {
+                    const span = document.createElement('span');
+                    span.className = 'schema__steps-bullet';
+                    span.innerHTML = stepElementTemplate(i);
+                    steps.push(span);
+                }
+
+                steps.forEach((step, index) => {
+                    step.addEventListener('click', function() {
+                        swiperInstance.slideTo(index);
+                    })
+                    if (index === currentIndex) {
+                        step.classList.add('schema__steps-bullet--active');
+                    }
+                    schemaSteps.appendChild(step);
+                })
+
+                
+            });
+
+            swiperInstance.on('slideChange', function() {
+                const currentIndex = swiperInstance.activeIndex;
+                steps.forEach((step, index) => {
+                    step.classList.remove('schema__steps-bullet--active');
+                    if (index <= currentIndex) {
+                        step.classList.add('schema__steps-bullet--active');
+                    }
+                })
+               
+            });
+
+            swiperInstance.init();
+        }
+
+        
 
         const widthChange = mq => {
             if (swiperInstance) {
                 swiperInstance.destroy();
                 swiperInstance = null;
-                options.autoHeight = mq.matches ? true : false;
-                swiperInstance = new Swiper(container, options);
+                initializeSwiper(mq);
             } else {
-                options.autoHeight = mq.matches ? true : false;
-                swiperInstance = new Swiper(container, options);
+                initializeSwiper(mq);
             }
         };
 

@@ -32,8 +32,13 @@
     @include sectionHeader();
     margin-top: 8rem;
     margin-bottom: 4rem;
+    @include breakpoint(laptop) {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
     @include breakpoint(mobile) {
         margin-top: 6rem;
+        margin-bottom: 4rem;
     }
 }
 
@@ -222,16 +227,12 @@
     }
 }
 
-.infra__social-slide {
+.infra__social-slide,
+.infra__transport-slide {
     min-height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    // &::before {
-    //     content: '';
-    //     flex-grow: 1;
-    //     height: 2rem;
-    // }
     .infra__decorative {
         z-index: 0;
     }
@@ -241,6 +242,100 @@
         z-index: 5;
     }
 }
+
+
+.infra__transport-slide-heading {
+    @include sectionHeader();
+    position: absolute !important;
+    top: 8rem;
+    left: 3rem;
+    z-index: 20 !important;
+    @include breakpoint(mobile) {
+        position: static !important;
+        margin-top: 8rem;
+        margin-bottom: 3rem;
+    }
+}
+
+
+.infra__transport-map {
+    flex-grow: 1;
+   
+    display: flex;
+    flex-direction: column;
+}
+
+
+.infra__transport-map-container {
+    flex-grow: 1;
+    
+    margin-right: -1.5rem;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+        margin-right: 0;
+        flex-grow: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        background-color: #fff;
+    }
+}
+
+.infra__transport-map-interactive {
+    position: relative;
+    flex-grow: 1;
+    
+    overflow: hidden;
+}
+
+.infra__transport-map-interactive-scroller {
+    position: absolute;
+    transform: translateZ(0);
+    
+}
+
+
+.infra__transport-map-interactive-image {
+    max-width: none;
+    max-height: none;   
+    width: auto;
+    height: 100vh;
+}
+
+.infra__transport-map-legend {
+    background-color: #fff;
+    display: flex;
+    border-left: 1px solid $border-color;
+    border-top: 1px solid $border-color;
+    margin-right: -1.5rem;
+    @include breakpoint(mobile) {
+        margin-right: 0;
+        border: none;
+        flex-direction: column;
+        background-color: transparent;
+    }
+}
+
+.infra__transport-map-legend__item {
+    width: 33.33%;
+    border-right: 1px solid $border-color;
+    &:last-child {
+        border-right: none;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        border-right: none;
+    }
+}
+
+.infra__transport-map-legend__card {
+    padding: 2rem 3rem;
+    padding-bottom: 5rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: black;
+}
+
 
 .infra__social-slide-heading {
     @include sectionHeader();
@@ -259,6 +354,8 @@
     flex-direction: column;
     border-left: 1px solid $border-color;
     position: relative;
+    z-index: 1;
+   
     &::before {
         content: '';
         position: absolute;
@@ -286,6 +383,7 @@
     margin-right: -1.5rem;
     position: relative;
     overflow: hidden;
+    
     @include breakpoint(mobile) {
         margin-right: 0;
         border-top: 1px solid $border-color;
@@ -299,13 +397,48 @@
     top: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
+    &--main {
+        z-index: 10;
+        animation-name: map-zoom-in;
+        animation-duration: 2s;
+        // animation-delay: 4s;
+        // animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-play-state: paused;
+        animation-fill-mode: forwards;
+        .infra__slide.active & {
+            animation-play-state: running;
+        }
+    }
     @include objectFitCover();
+}
+
+
+@keyframes map-zoom-in {
+    0% {
+        transform: scale(1);
+    }
+    70% {
+        transform: translate(10%, 0) scale(1.6);
+        
+    }
+    80% {
+        
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(10%, 0) scale(1.6);
+        opacity: 0;
+    }
 }
 
 .infra__social-map__location {
     position: absolute;
     display: flex;
     flex-direction: column;
+    z-index: 2;
     &--orenburg {
         top: 6%;
         left: 3%;

@@ -17,6 +17,9 @@
     @include sectionHeader();
     text-align: center;
     margin-top: 8rem;
+    @include breakpoint(laptop) {
+        margin-top: 4rem;
+    }
     @include breakpoint(mobile) {
         text-align: left;
         margin-top: 6rem;
@@ -26,6 +29,9 @@
 .payments__slider {
     padding-bottom: 5rem;
     margin-top: 5rem;
+    @include breakpoint(laptop) {
+        margin-top: 2rem;
+    }
     @include breakpoint(mobile) {
         padding-bottom: 0;
         margin-top: 2.5rem;

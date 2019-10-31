@@ -3,7 +3,7 @@ import selects from './customSelects';
 import introLinks from './introLinks';
 import introSlider from './introSlider';
 import formValidation from './formValidation';
-
+import transportMap from './transportMap';
 import PerfectScrollbar from 'perfect-scrollbar';
 import innerSlides from './innerSlides';
 import articleScroll from './articleScroll';
@@ -42,6 +42,17 @@ export default function() {
             if (downArrow) {
                 downArrow.addEventListener('click', function() {
                     fullpageSlider.moveSectionDown();
+                })
+            }
+
+            // Logo link
+
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.addEventListener('click', function(event) {
+                    console.log('Logo click')
+                    event.preventDefault();
+                    fullpageSlider.moveTo(1);
                 })
             }
 
@@ -94,6 +105,11 @@ export default function() {
             // Article scroll
 
             articleScroll();
+
+            // Transport map
+
+            // transportMap();
+            
 
             
         },
