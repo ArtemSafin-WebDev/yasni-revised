@@ -55,6 +55,11 @@
                         d="M43.722 68.678l-20.86 20.846a.983.983 0 01-.831.476H22a.917.917 0 01-.347-.084c-.012-.005-.025-.004-.037-.009-.065-.03-.117-.074-.174-.116-.05-.034-.106-.055-.15-.099-.016-.016-.021-.037-.035-.053-.006-.007-.016-.011-.023-.018L.277 68.678a.99.99 0 111.402-1.401L21 86.584V1a1 1 0 011-1h.031a1 1 0 011 1v85.553L42.32 67.277a.992.992 0 011.402 1.401z"
                     />
                 </symbol>
+                <symbol viewBox="0 0 56.966 56.966" id="search" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"
+                    />
+                </symbol>
                 <symbol viewBox="0 0 252.1 477.2" id="slider-next" xmlns="http://www.w3.org/2000/svg">
                     <path d="M248.2 229L23 4A13.5 13.5 0 104 23l215.5 215.6L4 454a13.4 13.4 0 000 19 13.6 13.6 0 009.5 4 13.2 13.2 0 009.5-4l225.1-225a13.4 13.4 0 000-19z" />
                 </symbol>
@@ -647,40 +652,40 @@
                                                                     <li class="infra__standard-slide-list-item">
                                                                         <div class="infra__standard-slide-list-item-content">
                                                                             <h5 class="infra__standard-slide-list-item-heading">
-                                                                                Заголовок
+                                                                                Электроэнергия
                                                                             </h5>
                                                                             <p class="infra__standard-slide-list-item-text">
-                                                                                Высокое качество, надежность и исключительная функциональность нашей
+                                                                                ООО «Энергетик»
                                                                             </p>
                                                                         </div>
                                                                     </li>
                                                                     <li class="infra__standard-slide-list-item">
                                                                         <div class="infra__standard-slide-list-item-content">
                                                                             <h5 class="infra__standard-slide-list-item-heading">
-                                                                                Заголовок
+                                                                                Тепловая энергия
                                                                             </h5>
                                                                             <p class="infra__standard-slide-list-item-text">
-                                                                                Высокое качество, надежность и исключительная функциональность нашей
+                                                                                ООО «Энергоресурс»
                                                                             </p>
                                                                         </div>
                                                                     </li>
                                                                     <li class="infra__standard-slide-list-item">
                                                                         <div class="infra__standard-slide-list-item-content">
                                                                             <h5 class="infra__standard-slide-list-item-heading">
-                                                                                Заголовок
+                                                                                Водоснабжение
                                                                             </h5>
                                                                             <p class="infra__standard-slide-list-item-text">
-                                                                                Высокое качество, надежность и исключительная функциональность нашей
+                                                                                ООО «Водопроводные системы»
                                                                             </p>
                                                                         </div>
                                                                     </li>
                                                                     <li class="infra__standard-slide-list-item">
                                                                         <div class="infra__standard-slide-list-item-content">
                                                                             <h5 class="infra__standard-slide-list-item-heading">
-                                                                                Заголовок
+                                                                                Водоотведение
                                                                             </h5>
                                                                             <p class="infra__standard-slide-list-item-text">
-                                                                                Высокое качество, надежность и исключительная функциональность нашей
+                                                                                ООО «КОС»
                                                                             </p>
                                                                         </div>
                                                                     </li>
@@ -814,35 +819,56 @@
                                                                         267 км
                                                                     </span>
                                                                 </span>
-                                                                <img src="img/maps/large-map.jpg" alt="" class="infra__social-map-image infra__social-map-image--main" />
+                                                                <div class="infra__social-map-interactive" id="interactive-map">
+                                                                    <div class="infra__social-map-interactive-scroller">
+                                                                        <img src="img/maps/large-map.jpg" alt="" class="infra__social-map-interactive-image" />
+                                                                    </div>
+                                                                </div>
+                                                                <button class="infra__social-map-zoom-btn" id="map-zoom">
+                                                                    <span>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 57">
+                                                                            <path d="M54.2 51.9L40.6 37.8a23 23 0 10-4.4 4l13.6 14.3a3 3 0 004.4-4.2zM23 6A17 17 0 116 23 17 17 0 0123 6z" />
+                                                                            <path d="M14 21h19v5H14z" />
+                                                                            <path d="M26 14v19h-5V14z" />
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
                                                             </div>
                                                             <ul class="infra__social-map-legend-list">
                                                                 <li class="infra__social-map-legend-list-item">
-                                                                    <span class="infra__social-map-legend-color infra__social-map-legend-color--violet"> </span>
-                                                                    <div class="infra__social-map-legend-info">
-                                                                        <span class="infra__social-map-legend-amount">10</span>
-                                                                        <span class="infra__social-map-legend-type">Учебных заведений</span>
+                                                                    <div class="infra__social-map-legend-card">
+                                                                        <span class="infra__social-map-legend-color infra__social-map-legend-color--violet"> </span>
+                                                                        <div class="infra__social-map-legend-info">
+                                                                            <span class="infra__social-map-legend-amount">10</span>
+                                                                            <span class="infra__social-map-legend-type">Учебных заведений</span>
+                                                                        </div>
                                                                     </div>
                                                                 </li>
                                                                 <li class="infra__social-map-legend-list-item">
-                                                                    <span class="infra__social-map-legend-color infra__social-map-legend-color--orange"> </span>
-                                                                    <div class="infra__social-map-legend-info">
-                                                                        <span class="infra__social-map-legend-amount">10</span>
-                                                                        <span class="infra__social-map-legend-type">Гостиниц</span>
+                                                                    <div class="infra__social-map-legend-card">
+                                                                        <span class="infra__social-map-legend-color infra__social-map-legend-color--orange"> </span>
+                                                                        <div class="infra__social-map-legend-info">
+                                                                            <span class="infra__social-map-legend-amount">10</span>
+                                                                            <span class="infra__social-map-legend-type">Гостиниц</span>
+                                                                        </div>
                                                                     </div>
                                                                 </li>
                                                                 <li class="infra__social-map-legend-list-item">
-                                                                    <span class="infra__social-map-legend-color infra__social-map-legend-color--blue"> </span>
-                                                                    <div class="infra__social-map-legend-info">
-                                                                        <span class="infra__social-map-legend-amount">3</span>
-                                                                        <span class="infra__social-map-legend-type">Спортивных объекта</span>
+                                                                    <div class="infra__social-map-legend-card">
+                                                                        <span class="infra__social-map-legend-color infra__social-map-legend-color--blue"> </span>
+                                                                        <div class="infra__social-map-legend-info">
+                                                                            <span class="infra__social-map-legend-amount">3</span>
+                                                                            <span class="infra__social-map-legend-type">Спортивных объекта</span>
+                                                                        </div>
                                                                     </div>
                                                                 </li>
                                                                 <li class="infra__social-map-legend-list-item">
-                                                                    <span class="infra__social-map-legend-color infra__social-map-legend-color--pink"> </span>
-                                                                    <div class="infra__social-map-legend-info">
-                                                                        <span class="infra__social-map-legend-amount">2</span>
-                                                                        <span class="infra__social-map-legend-type">Медицинских учреждения</span>
+                                                                    <div class="infra__social-map-legend-card">
+                                                                        <span class="infra__social-map-legend-color infra__social-map-legend-color--pink"> </span>
+                                                                        <div class="infra__social-map-legend-info">
+                                                                            <span class="infra__social-map-legend-amount">2</span>
+                                                                            <span class="infra__social-map-legend-type">Медицинских учреждения</span>
+                                                                        </div>
                                                                     </div>
                                                                 </li>
                                                             </ul>
@@ -870,17 +896,8 @@
                                                             Инвестиционная карта
                                                         </h2>
                                                         <div class="infra__transport-map">
-                                                            <div class="infra__transport-map-outer-container">
-                                                                <div class="infra__transport-map-container">
-                                                                    <div class="infra__transport-map-interactive" id="interactive-map">
-                                                                        <div class="infra__transport-map-interactive-scroller">
-                                                                            <img src="img/maps/large-map.jpg" alt="" class="infra__transport-map-interactive-image" />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="infra__transport-map-with-pointer js-map-with-pointer">
-                                                                    <img src="img/maps/maps-with-pointers.jpg" alt="" class="infra__transport-map-with-pointer-image" />
-                                                                </div>
+                                                            <div class="infra__transport-map-container">
+                                                                <img src="img/maps/maps-with-pointers.jpg" alt="" class="infra__transport-map-image" />
                                                             </div>
 
                                                             <div class="infra__transport-map-legend">

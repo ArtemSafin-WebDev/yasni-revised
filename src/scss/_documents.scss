@@ -17,7 +17,7 @@
 .documents__heading {
     @include sectionHeader();
 
-    margin-top: 8rem;
+    margin-top: 4rem;
     margin-bottom: 3rem;
     @include breakpoint(mobile) {
         margin-top: 6rem;

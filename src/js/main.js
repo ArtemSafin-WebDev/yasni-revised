@@ -4,7 +4,7 @@ import fullpage from './fullpage';
 import burgerMenu from './burgerMenu';
 import formScrollbar from './formScrollbar';
 import schemaSlider from './schemaSlider';
-import successSlider from './successSlider';
+// import successSlider from './successSlider';
 import paymentsSlider from './paymentsSlider';
 import documentsSlider from './documentsSlider';
 import smoothScrollToForm from './smoothScrollToForm';
@@ -14,7 +14,7 @@ import transportMap from './transportMap';
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
     detectTouch();
-    successSlider();
+    // successSlider();
     documentsSlider();
     schemaSlider();
     paymentsSlider();

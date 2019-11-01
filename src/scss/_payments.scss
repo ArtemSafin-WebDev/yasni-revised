@@ -16,7 +16,7 @@
 .payments__heading {
     @include sectionHeader();
     text-align: center;
-    margin-top: 8rem;
+    margin-top: 4rem;
     @include breakpoint(laptop) {
         margin-top: 4rem;
     }
@@ -28,7 +28,7 @@
 
 .payments__slider {
     padding-bottom: 5rem;
-    margin-top: 5rem;
+    margin-top: 4rem;
     @include breakpoint(laptop) {
         margin-top: 2rem;
     }

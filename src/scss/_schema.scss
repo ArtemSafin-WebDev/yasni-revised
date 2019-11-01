@@ -30,7 +30,7 @@
 .schema__heading-row {
     display: flex;
     align-items: center;
-    margin-top: 8rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     @include breakpoint(mobile) {
         flex-direction: column;

@@ -9,6 +9,8 @@ import innerSlides from './innerSlides';
 import articleScroll from './articleScroll';
 import { MOBILE_WIDTH } from './constants';
 
+import successSlider from './successSlider';
+
 export default function() {
 
     function isHomeSlide(origin, destination, direction) {
@@ -110,7 +112,9 @@ export default function() {
 
             // transportMap();
             
+            // Success slider
 
+            successSlider();
             
         },
         afterLoad: isHomeSlide,
