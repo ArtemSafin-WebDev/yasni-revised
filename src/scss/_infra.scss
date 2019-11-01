@@ -476,6 +476,10 @@
         visibility: visible;
         transition: all .2s;
     }
+    @include breakpoint(mobile) {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
 }
 
 
@@ -580,6 +584,18 @@
     display: flex;
     flex-direction: column;
     z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s, visibility 0s linear .2s;
+    .zoomed-in & {
+        opacity: 1;
+        visibility: visible;
+        transition: all .2s;
+    }
+    @include breakpoint(mobile) {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
     &--orenburg {
         top: 6%;
         left: 3%;

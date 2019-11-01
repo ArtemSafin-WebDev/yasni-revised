@@ -2963,6 +2963,10 @@ img {
     opacity: 1;
     visibility: visible;
     transition: all .2s; }
+  @media only screen and (max-width: 60.5em) {
+    .infra__social-map-image {
+      opacity: 1 !important;
+      visibility: visible !important; } }
 
 .infra__social-map-zoom-btn {
   position: absolute;
@@ -3061,7 +3065,18 @@ img {
   position: absolute;
   display: flex;
   flex-direction: column;
-  z-index: 2; }
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s, visibility 0s linear .2s; }
+  .zoomed-in .infra__social-map__location {
+    opacity: 1;
+    visibility: visible;
+    transition: all .2s; }
+  @media only screen and (max-width: 60.5em) {
+    .infra__social-map__location {
+      opacity: 1 !important;
+      visibility: visible !important; } }
   .infra__social-map__location--orenburg {
     top: 6%;
     left: 3%; }
