@@ -2792,6 +2792,9 @@ img {
   flex-grow: 1;
   display: flex;
   flex-direction: column; }
+  @media only screen and (max-width: 60.5em) {
+    .infra__transport-map {
+      margin-right: -2.5rem; } }
 
 .infra__transport-map-container {
   flex-grow: 1;
@@ -2802,14 +2805,18 @@ img {
     .infra__transport-map-container {
       margin-right: 0;
       flex-grow: 0;
-      padding-bottom: 56.25%;
-      position: relative;
-      background-color: #fff; } }
+      height: 40rem;
+      width: 100%; } }
 
 .infra__transport-map-interactive {
   position: relative;
   flex-grow: 1;
   overflow: hidden; }
+  @media only screen and (max-width: 60.5em) {
+    .infra__transport-map-interactive {
+      width: 100%;
+      height: 100%;
+      overflow: auto; } }
 
 .infra__transport-map-interactive-scroller {
   position: absolute;
@@ -2820,6 +2827,9 @@ img {
   max-height: none;
   width: auto;
   height: 100vh; }
+  @media only screen and (max-width: 60.5em) {
+    .infra__transport-map-interactive-image {
+      height: 120vh; } }
 
 .infra__transport-map-legend {
   background-color: #fff;
@@ -2831,6 +2841,7 @@ img {
     .infra__transport-map-legend {
       margin-right: 0;
       border: none;
+      border-left: 1px solid #bacbdb;
       flex-direction: column;
       background-color: transparent; } }
 
@@ -2848,8 +2859,14 @@ img {
   padding: 2rem 3rem;
   padding-bottom: 5rem;
   font-size: 2.4rem;
+  line-height: 1.4;
   font-weight: 600;
   color: black; }
+  @media only screen and (max-width: 60.5em) {
+    .infra__transport-map-legend__card {
+      padding: 2.5rem 3rem;
+      border-top: 1px solid #bacbdb;
+      background-color: #fff; } }
 
 .infra__social-slide-heading {
   color: #2d2d2d;

@@ -6,7 +6,7 @@ export default function() {
     const wrapper = document.querySelector('#interactive-map');
 
     if (!wrapper) return;
-    // if (window.matchMedia(`(min-width: ${MOBILE_WIDTH}px)`).matches) return;
+    if (window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`).matches) return;
 
     window.addEventListener('load', function() {
         new IScrollZoom(wrapper, {
