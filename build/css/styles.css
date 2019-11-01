@@ -2796,11 +2796,18 @@ img {
     .infra__transport-map {
       margin-right: -2.5rem; } }
 
+.infra__transport-map-outer-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+
 .infra__transport-map-container {
   flex-grow: 1;
   margin-right: -1.5rem;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: relative; }
   @media only screen and (max-width: 60.5em) {
     .infra__transport-map-container {
       margin-right: 0;
@@ -2817,6 +2824,32 @@ img {
       width: 100%;
       height: 100%;
       overflow: auto; } }
+
+.infra__transport-map-with-pointer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: orange;
+  cursor: pointer;
+  transition: all .2s;
+  z-index: 300; }
+  .infra__transport-map-with-pointer.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s, visibility 0s linear .2s; }
+
+.infra__transport-map-with-pointer-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  font-family: 'object-fit: cover; object-position: center;'; }
 
 .infra__transport-map-interactive-scroller {
   position: absolute;

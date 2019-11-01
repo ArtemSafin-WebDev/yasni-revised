@@ -3,6 +3,18 @@ import { MOBILE_WIDTH } from './constants';
 
 
 export default function() {
+    const mapsWithPointers = Array.from(document.querySelectorAll('.js-map-with-pointer'))
+
+    mapsWithPointers.forEach(map => {
+        map.addEventListener('click', function() {
+            map.addEventListener('touchmove', function(event) {
+                event.preventDefault();
+            }, {passive: true})
+            this.classList.add('hidden');
+        })
+    })
+
+
     const wrapper = document.querySelector('#interactive-map');
 
     if (!wrapper) return;
@@ -24,6 +36,9 @@ export default function() {
             wheelAction: 'zoom'
         });
     })
+
+
+    
 
     
 }
