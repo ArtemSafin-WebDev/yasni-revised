@@ -670,9 +670,10 @@
 .infra__social-map-legend-card {
     display: flex;
     opacity: 0;
+    visibility: hidden;
     transition: opacity .2s, visibility 0s linear .2s;
     .zoomed-in & {
-        visibility: hidden;
+        visibility: visible;
         opacity: 1;
         transition: all .2s;
     }
