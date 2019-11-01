@@ -45,6 +45,8 @@ export default function() {
                     steps.push(span);
                 }
 
+                schemaSteps.innerHTML = '';
+
                 steps.forEach((step, index) => {
                     step.addEventListener('click', function() {
                         swiperInstance.slideTo(index);
