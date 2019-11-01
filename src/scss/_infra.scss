@@ -467,18 +467,15 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    // &--main {
-    //     z-index: 10;
-    //     animation-name: map-zoom-in;
-    //     animation-duration: 2s;
-    //     animation-timing-function: ease-in-out;
-    //     animation-play-state: paused;
-    //     animation-fill-mode: forwards;
-    //     .infra__slide.active & {
-    //         animation-play-state: running;
-    //     }
-    // }
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s, visibility 0s linear .2s;
     @include objectFitCover();
+    .zoomed-in & {
+        opacity: 1;
+        visibility: visible;
+        transition: all .2s;
+    }
 }
 
 
