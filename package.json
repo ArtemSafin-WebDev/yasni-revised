@@ -18,6 +18,8 @@
   ],
   "dependencies": {
     "body-scroll-lock": "^2.6.4",
+    "chart.js": "^2.9.1",
+    "chartjs-plugin-datalabels": "^0.7.0",
     "choices.js": "^7.1.5",
     "classlist-polyfill": "^1.2.0",
     "core-js": "^3.1.4",
@@ -30,6 +32,7 @@
     "iscroll": "^5.2.0",
     "jquery": "^3.3.1",
     "jump.js": "^1.0.2",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "object-fit-images": "^3.2.4",
     "parsleyjs": "^2.9.1",

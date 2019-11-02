@@ -3,13 +3,14 @@ import selects from './customSelects';
 import introLinks from './introLinks';
 import introSlider from './introSlider';
 import formValidation from './formValidation';
-import transportMap from './transportMap';
+
 import PerfectScrollbar from 'perfect-scrollbar';
 import innerSlides from './innerSlides';
 import articleScroll from './articleScroll';
 import { MOBILE_WIDTH } from './constants';
 
 import successSlider from './successSlider';
+import calculator from './calculator';
 
 export default function() {
 
@@ -57,7 +58,6 @@ export default function() {
                     fullpageSlider.moveTo(1);
                 })
             }
-
 
             // Slides scrolling
 
@@ -107,14 +107,14 @@ export default function() {
             // Article scroll
 
             articleScroll();
-
-            // Transport map
-
-            // transportMap();
-            
+    
             // Success slider
 
             successSlider();
+
+            // Calculator
+
+            calculator();
             
         },
         afterLoad: isHomeSlide,

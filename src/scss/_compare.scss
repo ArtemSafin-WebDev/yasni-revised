@@ -1,0 +1,144 @@
+.compare {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include breakpoint(mobile) {
+        &::after {
+            content: '';
+            height: 1px;
+            background-color: $border-color;
+            left: calc((100vw - 100%) / 2 * -1);
+            position: absolute;
+            width: 100vw;
+            top: 0;
+        }
+
+        @include fullwidthBG {
+            background-color: #f1f4f9;
+        }
+    }
+    
+}
+
+
+.compare__heading {
+    @include sectionHeader();
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    @include breakpoint(mobile) {
+        margin-top: 6rem;
+    }
+}
+
+
+.compare__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid $border-color;
+}
+
+
+.compare__row {
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+
+.compare__form-column {
+    width: 38rem;
+    padding-left: 6.5rem;
+    flex-shrink: 0;
+    margin-right: 6.5rem;
+}
+
+
+.compare__chart-column {
+    width: 50%;
+    flex-grow: 1;
+}
+
+
+
+.compare__form {
+    
+}
+
+.compare__form-group {
+    margin-bottom: 1.5rem;
+}
+
+
+.compare__label {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: .01rem;
+    color: #9fa4af;
+    margin-bottom: 0.8rem;
+    display: block;
+    text-transform: uppercase;
+}
+
+
+.compare__input {
+    border: 1px solid #bacbdb;
+    font: inherit;
+    font-size: 3rem;
+    color: $black-text;
+    padding: 1.1rem 2rem; 
+    width: 100%;
+    @include placeholder {
+        color: $black-text;
+        font-size: 3rem;
+    }
+}
+
+
+.compare__chart-wrapper {
+    margin-top: 8rem;
+}
+
+.compare__chart {
+    position: relative;
+}
+
+
+.compare__legend {
+    display: flex;
+    margin-top: auto;
+    border-top: 1px solid $border-color;
+    margin-right: -1.5rem;
+}
+
+
+.compare__legend-item {
+    width: 50%;
+    padding: 2rem 6.5rem;
+    font-size: 2.4rem;
+    display: flex;
+    align-items: center;
+    
+    &::before {
+        content: '';
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-right: 4rem;
+        background-color: $primary-red;
+    }
+    &--blue {
+        &::before {
+            background-color: #215992;
+        }
+    }
+    &--green {
+        &::before {
+            background-color: #43cb83;
+        }
+    }
+    &:nth-child(2) {
+        border-left: 1px solid $border-color;
+    }
+}

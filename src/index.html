@@ -408,7 +408,6 @@
                                                         </p>
                                                     </div>
                                                 </li>
-                                                
                                             </ol>
                                         </div>
                                     </div>
@@ -908,6 +907,72 @@
                         <div><div></div></div>
                         <div><div></div></div>
                         <div><div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section fp-auto-height-responsive" data-anchor="compare">
+        <div class="fullpage-section-inner">
+            <div class="compare">
+                <div class="compare__content">
+                    
+                    <div class="compare__row">
+                        <div class="compare__form-column">
+                            <h2 class="compare__heading">
+                                Сравнение
+                            </h2>
+                            <form action="/" class="compare__form js-compare-form" autocomplete="off">
+                                <div class="compare__form-group">
+                                    <label for="revenue" class="compare__label">
+                                        Выручка
+                                    </label>
+                                    <input type="tel" id="revenue" name="revenue" class="compare__input js-only-numeric" />
+                                </div>
+                                <div class="compare__form-group">
+                                    <label for="expense" class="compare__label">
+                                        Расходы
+                                    </label>
+                                    <input type="tel" id="expense" name="expense" class="compare__input js-only-numeric" />
+                                </div>
+                                
+                                <div class="compare__form-group">
+                                    <label for="personel" class="compare__label">
+                                        Кол. сотрудников
+                                    </label>
+                                    <input type="tel" id="personel" name="personel" class="compare__input js-only-numeric" />
+                                </div>
+                                <div class="compare__form-group">
+                                    <label for="median-wage" class="compare__label">
+                                        Средняя зп
+                                    </label>
+                                    <input type="tel" id="median-wage" name="median_wage" class="compare__input js-only-numeric" />
+                                </div>
+                                <div class="compare__form-group">
+                                    <label for="real-estate" class="compare__label">
+                                        Стоимость недвижимого имущества
+                                    </label>
+                                    <input type="tel" id="real-estate" name="real_estate" class="compare__input js-only-numeric" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="compare__chart-column">
+                            <div class="compare__chart-wrapper">
+                                <div class="compare__chart">
+                                    <canvas id="profit-chart"></canvas>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="compare__legend">
+                        <div class="compare__legend-item compare__legend-item--blue">
+                            Без ТОСЭР тыс. руб.
+                        </div>
+                        <div class="compare__legend-item compare__legend-item--green">
+                            В ТОСЭР тыс. руб.
+                        </div>
                     </div>
                 </div>
             </div>
