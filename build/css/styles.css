@@ -3246,7 +3246,8 @@ img {
   left: -3rem;
   right: 0;
   top: 0;
-  bottom: 0; }
+  bottom: 0;
+  max-height: 100vh; }
 
 .infra__standard-slide-image {
   position: absolute;
@@ -3333,6 +3334,10 @@ img {
 .infra__standard-slide-list-item-text {
   font-size: 2.4rem;
   margin-top: 1rem; }
+  .infra__standard-slide-list-item-text p {
+    margin-bottom: 1.5rem; }
+    .infra__standard-slide-list-item-text p:last-child {
+      margin-bottom: 0; }
 
 .infra__decorative {
   position: absolute;
