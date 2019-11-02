@@ -62,7 +62,7 @@
     margin: 0 -1.5rem;
     display: flex;
     flex-grow: 1;
-    @include breakpoint(laptop) {
+    @include breakpoint(desktop) {
         flex-wrap: wrap;
         margin: -1.5rem;
     }
@@ -82,7 +82,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    @include breakpoint(laptop) {
+    @include breakpoint(desktop) {
         width: 50%;
         padding: 1.5rem;
     }

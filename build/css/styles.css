@@ -1224,25 +1224,32 @@ html.fp-enabled,
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  font-size: 55%; }
+  font-size: 55%;
+  font-size: 8.8px; }
   @media only screen and (max-width: 100em) {
     html {
-      font-size: 45%; } }
+      font-size: 45%;
+      font-size: 7.2px; } }
   @media only screen and (max-width: 75em) {
     html {
-      font-size: 40%; } }
+      font-size: 40%;
+      font-size: 6.4px; } }
   @media only screen and (max-width: 64em) {
     html {
-      font-size: 35%; } }
+      font-size: 35%;
+      font-size: 5.6px; } }
   @media only screen and (max-width: 60.5em) {
     html {
-      font-size: 62.5%; } }
+      font-size: 62.5%;
+      font-size: 10px; } }
   @media only screen and (max-width: 36em) {
     html {
-      font-size: 40%; } }
+      font-size: 40%;
+      font-size: 6.4px; } }
   @media only screen and (max-width: 23.125em) {
     html {
-      font-size: 35%; } }
+      font-size: 35%;
+      font-size: 5.6%; } }
 
 body {
   min-width: 320px;
@@ -2424,6 +2431,10 @@ img {
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap; }
+  @media only screen and (max-width: 87.5em) {
+    .payments__card-amount-before {
+      font-size: 1.8rem;
+      padding: .8rem 1rem; } }
   @media only screen and (max-width: 75em) {
     .payments__card-amount-before {
       font-size: 1.8rem; } }
@@ -2450,6 +2461,12 @@ img {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
+  @media only screen and (max-width: 87.5em) {
+    .payments__card-amount-after {
+      font-size: 5rem; } }
+  @media only screen and (max-width: 75em) {
+    .payments__card-amount-after {
+      font-size: 4rem; } }
   @media only screen and (max-width: 60.5em) {
     .payments__card-amount-after {
       font-size: 9rem; } }
@@ -2595,7 +2612,7 @@ img {
   margin: 0 -1.5rem;
   display: flex;
   flex-grow: 1; }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 87.5em) {
     .infra__navigation-list {
       flex-wrap: wrap;
       margin: -1.5rem; } }
@@ -2614,7 +2631,7 @@ img {
   flex-grow: 1;
   display: flex;
   flex-direction: column; }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 87.5em) {
     .infra__navigation-list-item {
       width: 50%;
       padding: 1.5rem; } }
@@ -3997,7 +4014,7 @@ img {
   padding-bottom: 2rem;
   padding-top: 1rem;
   border-bottom: 1px solid #bacbdb; }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 87.5em) {
     .schema__steps-pagination {
       flex-direction: column;
       align-items: flex-start; } }

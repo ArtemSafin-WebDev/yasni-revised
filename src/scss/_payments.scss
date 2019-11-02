@@ -166,6 +166,7 @@
     text-transform: uppercase;
     margin-top: 3rem;
     font-weight: 400;
+    
     @include breakpoint(mobile) {
         font-size: 4rem;
         
@@ -223,6 +224,10 @@
     font-weight: 700;
     user-select: none;
     white-space: nowrap;
+    @include breakpoint(desktop) {
+        font-size: 1.8rem;
+        padding: .8rem 1rem;
+    }
     @include breakpoint(laptop) {
         font-size: 1.8rem;
     }
@@ -248,6 +253,12 @@
     transform: translate(-50%, -50%);
     z-index: 4;
     user-select: none;
+    @include breakpoint(desktop) {
+        font-size: 5rem;
+    }
+    @include breakpoint(laptop) {
+        font-size: 4rem;
+    }
     @include breakpoint(mobile) {
         font-size: 9rem;
     }

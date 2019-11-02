@@ -10,26 +10,33 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
     font-size: 55%;
+    font-size: 8.8px;
     @include breakpoint(large-desktop) {
         font-size: 45%;
+        font-size: 7.2px;
     }
     @include breakpoint(laptop) {
         font-size: 40%;
+        font-size: 6.4px;
     }
     @include breakpoint(tablet) {
         font-size: 35%;
+        font-size: 5.6px;
     }
 
     @include breakpoint(mobile) {
         font-size: 62.5%;
+        font-size: 10px;
     }
 
     @include breakpoint(small-mobile) {
         font-size: 40%;
+        font-size: 6.4px;
     }
 
     @include breakpoint(supersmall-mobile) {
         font-size: 35%;
+        font-size: 5.6%;
     }
 }
 
