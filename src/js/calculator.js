@@ -1,19 +1,16 @@
 import { debounce } from 'lodash';
 import Chart from 'chart.js';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+// import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const elements = {
     inputs: Array.from(document.querySelectorAll(':scope .js-compare-form input')),
-    profitChart: document.querySelector('#profit-chart'),
+    profitChart: document.querySelector('#profit-chart')
 };
 
-
-
-
-const test2 = {
+const chartOptions = {
     type: 'bar',
     data: {
-        labels: ['Прибыль без ТОСЭР', 'Прибыль в ТОСЭР', 'Налог без ТОСЭР', 'Налог в ТОСЭР'],
+        labels: ['Прибыль без ТОСЭР', 'Налог в ТОСЭР'],
         datasets: []
     },
     options: {
@@ -21,21 +18,22 @@ const test2 = {
             display: false
         },
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
+            xAxes: [
+                {
+                    display: false
                 }
-            }]
-        },
-        plugins: {
-            
-            datalabels: {
-                color: '#fff',
-              
-            }
+            ],
+
+            yAxes: [
+                {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            ]
         }
     }
-}
+};
 
 class ComparisonController {
     constructor(elements) {
@@ -66,26 +64,15 @@ class ComparisonController {
         }
     }
 
-
-    getDataSet(a, b, c, d) {
+    getDataSet(a, b) {
         return {
-            label: 'Рассчет прибыли',
-            data: [a, b, c, d],
-            barPercentage: 0.5,
-            backgroundColor: [
-                'rgba(33, 89, 146, 1)',
-                'rgba(67, 203, 131, 1)',
-                'rgba(33, 89, 146, 1)',
-                'rgba(67, 203, 131, 1)',
-            ],
-            borderColor: [
-                'rgba(33, 89, 146, 1)',
-                'rgba(67, 203, 131, 1)',
-                'rgba(33, 89, 146, 1)',
-                'rgba(67, 203, 131, 1)',
-            ],
+            label: 'Рассчет показателей',
+            data: [a, b],
+            barPercentage: 0.4,
+            backgroundColor: ['rgba(33, 89, 146, 1)', 'rgba(67, 203, 131, 1)', 'rgba(33, 89, 146, 1)', 'rgba(67, 203, 131, 1)'],
+            borderColor: ['rgba(33, 89, 146, 1)', 'rgba(67, 203, 131, 1)', 'rgba(33, 89, 146, 1)', 'rgba(67, 203, 131, 1)'],
             borderWidth: 1
-        }
+        };
     }
 
     setState = newState => {
@@ -108,8 +95,9 @@ class ComparisonController {
             });
         });
         console.log('Initial state', this.state);
-        console.log('Initial stats', this.calculateStats())
+        console.log('Initial stats', this.calculateStats());
         this.drawProfitChart();
+        this.plotChartData();
     }
 
     calculateStats() {
@@ -140,12 +128,11 @@ class ComparisonController {
         };
     }
 
-
     plotChartData() {
-        const { profitBefore, profitAfter, taxBefore, taxAfter } = this.calculateStats();
+        const { profitBefore, taxAfter } = this.calculateStats();
 
         this.chartInstance.data.datasets = [];
-        this.chartInstance.data.datasets.push(this.getDataSet(profitBefore, profitAfter, taxBefore, taxAfter))
+        this.chartInstance.data.datasets.push(this.getDataSet(profitBefore / 1000, taxAfter / 1000));
         this.chartInstance.update();
     }
 
@@ -153,7 +140,7 @@ class ComparisonController {
         const { profitChart } = this.elements;
         const ctx = profitChart.getContext('2d');
         Chart.defaults.global.defaultFontFamily = "'Segoe UI', 'sans-serif'";
-        this.chartInstance = new Chart(ctx, test2);
+        this.chartInstance = new Chart(ctx, chartOptions);
     }
 
     handleInput = debounce(event => {
@@ -167,12 +154,10 @@ class ComparisonController {
         });
 
         console.log('State after input change', this.state);
-        console.log('Stats after change', this.calculateStats())
+        console.log('Stats after change', this.calculateStats());
 
-        
         this.plotChartData();
-        console.log('Updated chart')
-       
+        console.log('Updated chart');
     }, 700);
 
     addListeners() {

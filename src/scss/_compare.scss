@@ -43,6 +43,9 @@
 .compare__row {
     display: flex;
     margin-bottom: 3rem;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
 }
 
 
@@ -51,12 +54,21 @@
     padding-left: 6.5rem;
     flex-shrink: 0;
     margin-right: 6.5rem;
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 
 .compare__chart-column {
     width: 50%;
     flex-grow: 1;
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+        width: 100%;
+    }
 }
 
 
@@ -67,6 +79,9 @@
 
 .compare__form-group {
     margin-bottom: 1.5rem;
+    @include breakpoint(mobile) {
+        padding: 0 2rem;
+    }
 }
 
 
@@ -88,6 +103,7 @@
     color: $black-text;
     padding: 1.1rem 2rem; 
     width: 100%;
+    background-color: #fff;
     @include placeholder {
         color: $black-text;
         font-size: 3rem;
@@ -97,6 +113,9 @@
 
 .compare__chart-wrapper {
     margin-top: 8rem;
+    @include breakpoint(mobile) {
+        margin-top: 4rem;
+    }
 }
 
 .compare__chart {
@@ -109,6 +128,9 @@
     margin-top: auto;
     border-top: 1px solid $border-color;
     margin-right: -1.5rem;
+    @include breakpoint(mobile) {
+        margin-right: -$mobile-content-padding;
+    }
 }
 
 
@@ -118,7 +140,11 @@
     font-size: 2.4rem;
     display: flex;
     align-items: center;
-    
+    background-color: #fff;
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        font-size: 2rem;
+    }
     &::before {
         content: '';
         width: 5.5rem;
@@ -127,6 +153,11 @@
         flex-shrink: 0;
         margin-right: 4rem;
         background-color: $primary-red;
+        @include breakpoint(mobile) {
+            width: 4rem;
+            height: 4rem;
+            margin-right: 2rem;
+        }
     }
     &--blue {
         &::before {
