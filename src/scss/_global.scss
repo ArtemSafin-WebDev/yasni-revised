@@ -36,12 +36,12 @@ html {
 
     @include breakpoint(supersmall-mobile) {
         font-size: 35%;
-        font-size: 5.6%;
+        font-size: 5.6px;
     }
 }
 
 body {
-    min-width: 320px;
+    // min-width: 320px;
     font-family: $segoe;
     color: $black-text;
     font-size: 1.6rem;
