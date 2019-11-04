@@ -94,8 +94,6 @@ class ComparisonController {
                 [name]: parseInt(value, 10)
             });
         });
-        console.log('Initial state', this.state);
-        console.log('Initial stats', this.calculateStats());
         this.drawProfitChart();
         this.plotChartData();
     }
@@ -114,7 +112,6 @@ class ComparisonController {
         };
 
         const profitBeforeTax = this.state.revenue - this.state.expense;
-
         const taxBefore = this.state.real_estate * standardTaxes.realEstateTax + profitBeforeTax * standardTaxes.profitTax + this.state.median_wage * this.state.personel * standardTaxes.socialTax;
         const taxAfter = this.state.real_estate * TOSERTaxes.realEstateTax + profitBeforeTax * TOSERTaxes.profitTax + this.state.median_wage * this.state.personel * TOSERTaxes.socialTax;
         const profitBefore = profitBeforeTax - taxBefore;
@@ -146,6 +143,8 @@ class ComparisonController {
     handleInput = debounce(event => {
         if (event.target.value.trim() === '') {
             event.target.value = 0;
+        } else {
+            event.target.value = parseInt(event.target.value, 10);
         }
 
         const { value, name } = event.target;
@@ -153,12 +152,9 @@ class ComparisonController {
             [name]: parseInt(value, 10)
         });
 
-        console.log('State after input change', this.state);
-        console.log('Stats after change', this.calculateStats());
-
         this.plotChartData();
-        console.log('Updated chart');
-    }, 700);
+        
+    }, 1500);
 
     addListeners() {
         const { inputs } = this.elements;
