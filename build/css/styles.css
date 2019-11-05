@@ -2784,6 +2784,10 @@ img {
     position: relative;
     z-index: 5; }
 
+@media only screen and (max-width: 60.5em) {
+  .infra__transport-slide .infra__decorative > div > div:nth-child(2), .infra__transport-slide .infra__decorative > div > div:nth-child(3), .infra__transport-slide .infra__decorative > div > div:nth-child(4) {
+    display: none; } }
+
 .infra__transport-slide-heading {
   color: #2d2d2d;
   font-size: 6rem;
@@ -3212,6 +3216,9 @@ img {
   flex-direction: column; }
   .infra__standard-slide .infra__decorative {
     z-index: 0; }
+    @media only screen and (max-width: 60.5em) {
+      .infra__standard-slide .infra__decorative > div > div:nth-child(2), .infra__standard-slide .infra__decorative > div > div:nth-child(3), .infra__standard-slide .infra__decorative > div > div:nth-child(4) {
+        display: none; } }
   .infra__standard-slide > *:not(.infra__decorative) {
     position: relative;
     z-index: 5; }
