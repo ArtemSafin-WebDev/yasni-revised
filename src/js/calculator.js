@@ -149,6 +149,20 @@ class ComparisonController {
         
     }, 1500);
 
+
+    handleSubmit = () => {
+        const { inputs } = this.elements;
+        inputs.forEach(input => {
+            
+            const { value, name } = input;
+            this.setState({
+                [name]: value.trim() === '' ? 0 : parseInt(value, 10)
+            });
+        });
+        this.drawProfitChart();
+        this.plotChartData();
+    }
+
     addListeners() {
         const { inputs } = this.elements;
 
