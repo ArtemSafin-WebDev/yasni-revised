@@ -86,12 +86,10 @@ class ComparisonController {
     setInitialState() {
         const { inputs } = this.elements;
         inputs.forEach(input => {
-            if (input.value.trim() === '') {
-                input.value = 0;
-            }
+            
             const { value, name } = input;
             this.setState({
-                [name]: parseInt(value, 10)
+                [name]: value.trim() === '' ? 0 : parseInt(value, 10)
             });
         });
         this.drawProfitChart();
@@ -141,15 +139,10 @@ class ComparisonController {
     }
 
     handleInput = debounce(event => {
-        if (event.target.value.trim() === '') {
-            event.target.value = 0;
-        } else {
-            event.target.value = parseInt(event.target.value, 10);
-        }
-
+        
         const { value, name } = event.target;
         this.setState({
-            [name]: parseInt(value, 10)
+            [name]: value.trim() === '' ? 0 : parseInt(value, 10)
         });
 
         this.plotChartData();
