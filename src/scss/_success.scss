@@ -95,7 +95,8 @@
     border-left: 1px solid $border-color;
     border-top: 1px solid $border-color;
     margin-right: -1.5rem;
-    
+    display: flex;
+    flex-direction: column;
     @include breakpoint(mobile) {
         border: none;
         margin-right: 0;
@@ -106,6 +107,10 @@
 
 .success__links-slider-container {
     padding: 0 6rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
     @include breakpoint(mobile) {
         padding: 0;
     }
@@ -192,10 +197,12 @@
     margin: 0 -6rem;
     padding: 0 6rem;
     overflow: hidden;
+  
     @include breakpoint(mobile) {
         margin: 0;
         padding: 0;
         overflow: visible;
+        display: block;
     }
     .swiper-container {
         overflow: visible;
@@ -235,20 +242,23 @@
 
 
 .success__links-slider-main-card-name {
-    font-size: 2.4rem;
+    font-size: 3rem;
+   
     color: $black-text;
     font-weight: 400;
     text-align: center;
-    margin-top: 1.5rem;
+   
+    margin-top: 3rem;
     padding: 0 4rem;
     @include breakpoint(mobile) {
         font-size: 3rem;
+        margin-top: 1.5rem;
     }
 }
 
 
 .success__links-slider-main-card-text {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     color: $black-text;
     text-align: center;
     width: 65%;
@@ -307,10 +317,10 @@
     color: $secondary-blue;
     transition: color .2s;
     &:first-child {
-        margin-right: 12rem;
+        margin-right: 15rem;
     }
     &:last-child {
-        margin-left: 12rem;
+        margin-left: 15rem;
     }
     @include hover-active {
         color: #5e87b0;

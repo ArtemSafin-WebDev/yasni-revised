@@ -72,14 +72,14 @@ export default function() {
                         scrollXMarginOffset: 2
                     })
     
-                    slide.addEventListener('ps-y-reach-start', function() {
-                        console.log('reaced start')
-                        fullpageSlider.moveSectionUp()
-                    })
-                    slide.addEventListener('ps-y-reach-end', function() {
-                        console.log("Reached end")
-                        fullpageSlider.moveSectionDown()
-                    })
+                    // slide.addEventListener('ps-y-reach-start', function() {
+                    //     console.log('reaced start')
+                    //     fullpageSlider.moveSectionUp()
+                    // })
+                    // slide.addEventListener('ps-y-reach-end', function() {
+                    //     console.log("Reached end")
+                    //     fullpageSlider.moveSectionDown()
+                    // })
                 })
             }
             

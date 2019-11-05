@@ -469,12 +469,12 @@
     @include objectFitCover();
     .zoomed-in & {
         opacity: 1;
-        visibility: visible;
+        visibility: inherit;
         transition: all .2s;
     }
     @include breakpoint(mobile) {
         opacity: 1 !important;
-        visibility: visible !important;
+        visibility: inherit !important;
     }
 }
 
