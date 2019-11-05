@@ -65,17 +65,16 @@
 .compare__chart-column {
     width: 50%;
     flex-grow: 1;
+    padding-top: 4.7rem;
     @include breakpoint(mobile) {
         flex-grow: 0;
         width: 100%;
+        padding-top: 0;
     }
 }
 
 
 
-.compare__form {
-    
-}
 
 .compare__form-group {
     margin-bottom: 1.5rem;
@@ -112,9 +111,9 @@
 
 
 .compare__chart-wrapper {
-    margin-top: 5rem;
+    margin-bottom: 5rem;
     @include breakpoint(mobile) {
-        margin-top: 4rem;
+        margin-bottom: 4rem;
     }
 }
 
@@ -172,4 +171,16 @@
     &:nth-child(2) {
         border-left: 1px solid $border-color;
     }
+}
+
+
+
+.compare__chart-heading {
+    font-weight: 400;
+    color: $secondary-blue;
+    font-size: 3.6rem;
+    letter-spacing: .025rem;
+    font-family: $bebas;
+    margin-bottom: 3rem;
+    
 }

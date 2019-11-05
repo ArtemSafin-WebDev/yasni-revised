@@ -10,6 +10,7 @@ import documentsSlider from './documentsSlider';
 import smoothScrollToForm from './smoothScrollToForm';
 import yandexMaps from './yandexMaps';
 import transportMap from './transportMap';
+import calculator from './calculator';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -24,4 +25,5 @@ document.addEventListener('DOMContentLoaded', function() {
     formScrollbar();
     smoothScrollToForm();
     transportMap();
+    calculator();
 });

@@ -10,7 +10,7 @@ import articleScroll from './articleScroll';
 import { MOBILE_WIDTH } from './constants';
 
 import successSlider from './successSlider';
-import calculator from './calculator';
+// import calculator from './calculator';
 
 export default function() {
 
@@ -114,7 +114,7 @@ export default function() {
 
             // Calculator
 
-            calculator();
+            // calculator();
             
         },
         afterLoad: isHomeSlide,

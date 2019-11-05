@@ -4,13 +4,43 @@ import Chart from 'chart.js';
 
 const elements = {
     inputs: Array.from(document.querySelectorAll(':scope .js-compare-form input')),
-    profitChart: document.querySelector('#profit-chart')
+    profitChart: document.querySelector('#profit-chart'),
+    taxChart: document.querySelector('#tax-chart')
 };
 
-const chartOptions = {
+const profitChartOptions = {
     type: 'bar',
     data: {
-        labels: ['Прибыль без ТОСЭР', 'Налог в ТОСЭР'],
+        labels: ['Прибыль без ТОСЭР', 'Прибыль в ТОСЭР'],
+        datasets: []
+    },
+    options: {
+        legend: {
+            display: false
+        },
+        scales: {
+            xAxes: [
+                {
+                    display: false
+                }
+            ],
+
+            yAxes: [
+                {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            ]
+        }
+    }
+};
+
+
+const taxChartOptions = {
+    type: 'bar',
+    data: {
+        labels: ['Налог без ТОСЭР', 'Налог в ТОСЭР'],
         datasets: []
     },
     options: {
@@ -39,7 +69,7 @@ class ComparisonController {
     constructor(elements) {
         this.elements = elements;
         this.checkElements();
-        this.chartInstance = null;
+        this.profitChartInstance = null;
         this.state = {
             expense: 0,
             median_wage: 0,
@@ -47,7 +77,7 @@ class ComparisonController {
             real_estate: 0,
             revenue: 0
         };
-
+        Chart.defaults.global.defaultFontFamily = "'Segoe UI', 'sans-serif'";
         this.setInitialState();
         this.addListeners();
     }
@@ -93,7 +123,9 @@ class ComparisonController {
             });
         });
         this.drawProfitChart();
-        this.plotChartData();
+        this.plotProfitChartData();
+        this.drawTaxChart();
+        this.plotTaxChartData();
     }
 
     calculateStats() {
@@ -123,19 +155,35 @@ class ComparisonController {
         };
     }
 
-    plotChartData() {
-        const { profitBefore, taxAfter } = this.calculateStats();
+    plotProfitChartData() {
+        const { profitBefore, profitAfter } = this.calculateStats();
 
-        this.chartInstance.data.datasets = [];
-        this.chartInstance.data.datasets.push(this.getDataSet(profitBefore / 1000, taxAfter / 1000));
-        this.chartInstance.update();
+        this.profitChartInstance.data.datasets = [];
+        this.profitChartInstance.data.datasets.push(this.getDataSet(profitBefore / 1000, profitAfter / 1000));
+        this.profitChartInstance.update();
+    }
+
+
+    plotTaxChartData() {
+        const { taxBefore, taxAfter } = this.calculateStats();
+
+        this.taxChartInstance.data.datasets = [];
+        this.taxChartInstance.data.datasets.push(this.getDataSet(taxBefore / 1000, taxAfter / 1000));
+        this.taxChartInstance.update();
     }
 
     drawProfitChart() {
         const { profitChart } = this.elements;
         const ctx = profitChart.getContext('2d');
-        Chart.defaults.global.defaultFontFamily = "'Segoe UI', 'sans-serif'";
-        this.chartInstance = new Chart(ctx, chartOptions);
+       
+        this.profitChartInstance = new Chart(ctx, profitChartOptions);
+    }
+
+    drawTaxChart() {
+        const { taxChart } = this.elements;
+        const ctx = taxChart.getContext('2d');
+       
+        this.taxChartInstance = new Chart(ctx, taxChartOptions);
     }
 
     handleInput = debounce(event => {
@@ -145,7 +193,8 @@ class ComparisonController {
             [name]: value.trim() === '' ? 0 : parseInt(value, 10)
         });
 
-        this.plotChartData();
+        this.plotProfitChartData();
+        this.plotTaxChartData();
         
     }, 1500);
 
@@ -159,8 +208,9 @@ class ComparisonController {
                 [name]: value.trim() === '' ? 0 : parseInt(value, 10)
             });
         });
-        this.drawProfitChart();
-        this.plotChartData();
+        
+        this.plotProfitChartData();
+        this.plotTaxChartData();
     }
 
     addListeners() {
