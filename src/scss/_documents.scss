@@ -98,8 +98,7 @@
 }
 
 .documents__card-format-icon {
-    width: 6.5rem;
-    height: 6.5rem;
+   
     background-color: $secondary-blue;
     display: flex;
     flex-direction: column;
@@ -107,12 +106,24 @@
     justify-content: center;
     flex-shrink: 0;
     margin-right: 3rem;
+
+    width: 65px;
+    height: 65px;
+    @include breakpoint(mobile) {
+        width: 45px;
+        height: 45px;
+    }
     svg {
         fill: white;
     }
     .icon-doc {
-        width: 4.2rem;
-        height: 4.2rem;
+       
+        width: 42px;
+        height: 42px;
+        @include breakpoint(mobile) {
+            width: 28px;
+            height: 28px;
+        }
     }
 }
 
