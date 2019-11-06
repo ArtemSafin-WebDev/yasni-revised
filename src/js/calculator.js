@@ -5,7 +5,8 @@ import Chart from 'chart.js';
 const elements = {
     inputs: Array.from(document.querySelectorAll(':scope .js-compare-form input')),
     profitChart: document.querySelector('#profit-chart'),
-    taxChart: document.querySelector('#tax-chart')
+    taxChart: document.querySelector('#tax-chart'),
+    form: document.querySelector('#compare-form')
 };
 
 const profitChartOptions = {
@@ -199,7 +200,8 @@ class ComparisonController {
     }, 1500);
 
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         const { inputs } = this.elements;
         inputs.forEach(input => {
             
@@ -214,13 +216,15 @@ class ComparisonController {
     }
 
     addListeners() {
-        const { inputs } = this.elements;
+        const { inputs, form } = this.elements;
 
-        inputs.forEach(input => {
-            input.addEventListener('input', event => {
-                this.handleInput(event);
-            });
-        });
+        form.addEventListener('submit', this.handleSubmit);
+
+        // inputs.forEach(input => {
+        //     input.addEventListener('input', event => {
+        //         this.handleInput(event);
+        //     });
+        // });
     }
 }
 

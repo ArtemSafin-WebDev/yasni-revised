@@ -127,7 +127,7 @@
     width: 100%;
     padding-bottom: 56.25%;
     position: relative;
-    background-color: $secondary-blue;
+    background-color: lightgrey;
     @include breakpoint(mobile) {
         padding-bottom: 65%;
     }

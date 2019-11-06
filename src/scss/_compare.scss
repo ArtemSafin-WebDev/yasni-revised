@@ -49,6 +49,42 @@
 }
 
 
+.compare__submit-wrapper {
+    margin-top: 2.4rem;
+    @include breakpoint(mobile) {
+        padding: 0 2rem;
+        margin-top: 4rem;
+        margin-bottom: 5rem;
+    }
+}
+
+.compare__submit {
+    
+    padding: 2rem 2rem; 
+    padding-bottom: 2.2rem;
+    width: 100%;
+    background-color: $secondary-blue;
+
+
+    font-size: 1.8rem;
+    letter-spacing: .05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+   
+    transition: background-color .2s;
+
+    @include hover-active {
+        background-color: #43cb83;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+    }
+}
+
+
 .compare__form-column {
     width: 38rem;
     padding-left: 6.5rem;

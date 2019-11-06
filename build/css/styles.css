@@ -3125,11 +3125,19 @@ img {
   width: 2.2rem;
   height: 2.2rem;
   border-width: 0.6rem;
+  width: 18px;
+  height: 18px;
+  border-width: 4px;
   border-style: solid;
   border-color: #215992;
   border-radius: 50%;
   background-color: #fff;
   flex-shrink: 0; }
+  @media only screen and (max-width: 36em) {
+    .infra__social-map__location-circle {
+      width: 12px;
+      height: 12px;
+      border-width: 3px; } }
 
 .infra__social-map-legend-list {
   display: flex;
@@ -4384,21 +4392,13 @@ img {
   justify-content: center;
   flex-shrink: 0;
   margin-right: 3rem;
-  width: 65px;
-  height: 65px; }
-  @media only screen and (max-width: 60.5em) {
-    .documents__card-format-icon {
-      width: 45px;
-      height: 45px; } }
+  width: 45px;
+  height: 45px; }
   .documents__card-format-icon svg {
     fill: white; }
   .documents__card-format-icon .icon-doc {
-    width: 42px;
-    height: 42px; }
-    @media only screen and (max-width: 60.5em) {
-      .documents__card-format-icon .icon-doc {
-        width: 28px;
-        height: 28px; } }
+    width: 28px;
+    height: 28px; }
 
 .documents__card-title {
   font-size: 2.2rem;
@@ -4498,11 +4498,21 @@ img {
   display: flex;
   flex-direction: column; }
 
-.documents__slider-panel-pagination-column {
-  width: calc(50% + 10px); }
+@media only screen and (max-width: 60.5em) {
+  .documents__slider-panel-pagination-column {
+    width: calc(50% + 20px); } }
 
-.documents__slider-panel-navigation-column {
-  width: calc(50% - 10px); }
+@media only screen and (max-width: 36em) {
+  .documents__slider-panel-pagination-column {
+    width: calc(50% + 10px); } }
+
+@media only screen and (max-width: 60.5em) {
+  .documents__slider-panel-navigation-column {
+    width: calc(50% - 20px); } }
+
+@media only screen and (max-width: 36em) {
+  .documents__slider-panel-navigation-column {
+    width: calc(50% - 10px); } }
 
 .documents__slider-panel-pagination {
   flex-grow: 1;
@@ -4666,7 +4676,7 @@ img {
   width: 100%;
   padding-bottom: 56.25%;
   position: relative;
-  background-color: #215992; }
+  background-color: lightgrey; }
   @media only screen and (max-width: 60.5em) {
     .contacts__card-map-container {
       padding-bottom: 65%; } }
@@ -4765,6 +4775,33 @@ img {
   @media only screen and (max-width: 60.5em) {
     .compare__row {
       flex-direction: column; } }
+
+.compare__submit-wrapper {
+  margin-top: 2.4rem; }
+  @media only screen and (max-width: 60.5em) {
+    .compare__submit-wrapper {
+      padding: 0 2rem;
+      margin-top: 4rem;
+      margin-bottom: 5rem; } }
+
+.compare__submit {
+  padding: 2rem 2rem;
+  padding-bottom: 2.2rem;
+  width: 100%;
+  background-color: #215992;
+  font-size: 1.8rem;
+  letter-spacing: .05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  transition: background-color .2s; }
+  .no-touch .compare__submit:hover,
+  .touch .compare__submit:active {
+    background-color: #43cb83; }
+  @media only screen and (max-width: 60.5em) {
+    .compare__submit {
+      font-size: 2.2rem; } }
 
 .compare__form-column {
   width: 38rem;

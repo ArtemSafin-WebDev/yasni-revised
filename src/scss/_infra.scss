@@ -650,12 +650,22 @@
 .infra__social-map__location-circle {
     width: 2.2rem;
     height: 2.2rem;
+
     border-width: 0.6rem;
+
+    width: 18px;
+    height: 18px;
+    border-width: 4px;
     border-style: solid;
     border-color: $secondary-blue;
     border-radius: 50%;
     background-color: #fff;
     flex-shrink: 0;
+    @include breakpoint(small-mobile) {
+        width: 12px;
+        height: 12px;
+        border-width: 3px;
+    }
 }
 
 .infra__social-map-legend-list {

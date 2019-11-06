@@ -107,23 +107,16 @@
     flex-shrink: 0;
     margin-right: 3rem;
 
-    width: 65px;
-    height: 65px;
-    @include breakpoint(mobile) {
-        width: 45px;
-        height: 45px;
-    }
+    width: 45px;
+    height: 45px;
+    
+   
     svg {
         fill: white;
     }
     .icon-doc {
-       
-        width: 42px;
-        height: 42px;
-        @include breakpoint(mobile) {
-            width: 28px;
-            height: 28px;
-        }
+        width: 28px;
+        height: 28px;
     }
 }
 
@@ -241,11 +234,22 @@
 }
 
 .documents__slider-panel-pagination-column {
-    width: calc(50% + 10px);
+    @include breakpoint(mobile) {
+        width: calc(50% + 20px);
+    }
+    @include breakpoint(small-mobile) {
+        width: calc(50% + 10px);
+    }
+    
 }
 
 .documents__slider-panel-navigation-column {
-    width: calc(50% - 10px);
+    @include breakpoint(mobile) {
+        width: calc(50% - 20px);
+    }
+    @include breakpoint(small-mobile) {
+        width: calc(50% - 10px);
+    }
 }
 
 .documents__slider-panel-pagination {
